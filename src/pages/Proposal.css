@@ -1,0 +1,135 @@
+/* ══════════════════════════════════════════════
+   PROPOSAL PAGE CSS - ULTRA PREMIUM
+══════════════════════════════════════════════ */
+.proposal-section {
+  padding: 100px 0 160px;
+  background: #f8f6f2; /* Off-white background */
+}
+.proposal-container {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.05);
+  padding: 80px;
+}
+.prop-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.prop-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #0a1628;
+  margin-bottom: 16px;
+}
+.prop-header p {
+  font-family: 'Inter', sans-serif;
+  color: #6b7280;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* FLUSHED PREMIUM INPUTS */
+.premium-form {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.pf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.pf-group {
+  position: relative;
+}
+.pf-input {
+  width: 100%;
+  padding: 12px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #e5e7eb;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  color: #0a1628;
+  transition: all 0.3s ease;
+  outline: none;
+}
+.pf-input:focus {
+  border-bottom-color: #c9a84c;
+}
+.pf-input::placeholder {
+  color: #d1d5db;
+  font-weight: 400;
+}
+.pf-label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.pf-textarea {
+  min-height: 80px;
+  resize: vertical;
+  line-height: 1.6;
+}
+.pf-submit {
+  margin-top: 24px;
+  background: #0a1628;
+  color: #fff;
+  border: none;
+  padding: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.4s ease;
+}
+.pf-submit:hover {
+  background: #c9a84c;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(201,168,76,0.3);
+}
+
+.pf-success {
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  color: #047857;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .proposal-container { padding: 48px 24px; }
+  .pf-row { grid-template-columns: 1fr; gap: 40px; }
+  .prop-header h2 { font-size: 2.2rem; }
+}
+
+@media (max-width: 480px) {
+  .proposal-section { padding: 40px 0 80px; background: #fff; }
+  .proposal-container { padding: 24px 16px; border-radius: 0; box-shadow: none; }
+  .prop-header { margin-bottom: 40px; }
+  .prop-header h2 { font-size: 1.9rem; }
+  .prop-header p { font-size: 0.95rem; }
+  .premium-form { gap: 32px; }
+  .pf-row { gap: 32px; }
+  .pf-input { font-size: 1rem; padding: 10px 0; }
+  .pf-submit { font-size: 0.9rem; padding: 20px; }
+}

@@ -1,0 +1,175 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { GraduationCap, HeartPulse, ShoppingBag, Store, Monitor, Landmark, Factory, Truck, ArrowRight } from 'lucide-react';
+import bannerIndustries from '../assets/banner-industries.jpg';
+import './Industries.css';
+
+const industries = [
+  {
+    icon: <GraduationCap size={22}/>, color: '#4f46e5', title: 'Education',
+    desc: "India's education sector is undergoing rapid transformation with EdTech disruption and government policy reforms. We place talent across K-12, higher education, and online learning platforms.",
+    subSectors: ['K-12 Schools & Chains', 'EdTech & Online Learning', 'Higher Education & Universities', 'Coaching & Test Prep', 'Vocational Training'],
+    keyFunctions: ['Academic Directors', 'Sales & Marketing Heads', 'Content & Curriculum Leads', 'HR Business Partners', 'Technology & Product'],
+    levels: { junior: ['Academic Coordinator', 'Content Writer', 'Sales Executive'], mid: ['School Principal', 'Regional Sales Manager', 'Product Manager'], senior: ['CEO / Director', 'VP Sales', 'Chief Academic Officer'] }
+  },
+  {
+    icon: <HeartPulse size={22}/>, color: '#e11d48', title: 'Healthcare',
+    desc: "One of India's fastest-growing sectors, healthcare demands specialised talent across clinical, administrative, and technology functions. We have deep networks in hospitals, pharma, and diagnostics.",
+    subSectors: ['Hospitals & Hospital Chains', 'Pharmaceutical Companies', 'Diagnostics & Pathology', 'MedTech & Medical Devices', 'Health Insurance'],
+    keyFunctions: ['Clinical Operations', 'Medical Affairs', 'Regulatory Affairs', 'Sales & Marketing', 'Finance & HR'],
+    levels: { junior: ['MR / Sales Rep', 'Lab Technician', 'HR Executive'], mid: ['Brand Manager', 'Area Sales Manager', 'Hospital Administrator'], senior: ['CMO / Medical Director', 'VP Sales', 'CEO'] }
+  },
+  {
+    icon: <ShoppingBag size={22}/>, color: '#f59e0b', title: 'FMCG',
+    desc: "The FMCG sector in India is highly competitive and talent-intensive. We specialise in placing sales, marketing, supply chain, and category management professionals.",
+    subSectors: ['Food & Beverages', 'Personal Care', 'Home Care', 'Packaged Foods', 'Beverages & Dairy'],
+    keyFunctions: ['Sales & Distribution', 'Marketing & Brand', 'Supply Chain', 'Category Management', 'Finance & HR'],
+    levels: { junior: ['Territory Sales Officer', 'Graduate Trainee', 'Brand Executive'], mid: ['RSM / ZSM', 'Brand Manager', 'SCM Manager'], senior: ['National Sales Head', 'CMO', 'CEO / MD'] }
+  },
+  {
+    icon: <Store size={22}/>, color: '#ec4899', title: 'Retail',
+    desc: "India's retail revolution — from organised formats to quick commerce — creates constant demand for operations, merchandising, and customer experience talent.",
+    subSectors: ['Organised Retail', 'E-Commerce', 'Quick Commerce', 'Fashion & Lifestyle', 'Grocery & Hypermarkets'],
+    keyFunctions: ['Store Operations', 'Merchandising', 'Supply Chain', 'Marketing', 'Technology'],
+    levels: { junior: ['Store Executive', 'Merchandiser', 'Customer Service'], mid: ['Store Manager', 'Category Manager', 'Regional Operations'], senior: ['VP Operations', 'Chief Retail Officer', 'CEO'] }
+  },
+  {
+    icon: <Monitor size={22}/>, color: '#0284c7', title: 'IT & ITeS',
+    desc: "Technology is the fastest-growing hiring segment in India. From product startups to enterprise IT, we place engineers, product managers, data scientists, and tech leaders.",
+    subSectors: ['Software Product Companies', 'IT Services & Consulting', 'Cloud & Infrastructure', 'Cybersecurity', 'Data & Analytics'],
+    keyFunctions: ['Engineering', 'Product Management', 'Data & AI', 'DevOps & Cloud', 'Tech Leadership'],
+    levels: { junior: ['Software Engineer', 'Data Analyst', 'QA Engineer'], mid: ['Tech Lead', 'Product Manager', 'DevOps Engineer'], senior: ['CTO', 'VP Engineering', 'Chief Data Officer'] }
+  },
+  {
+    icon: <Landmark size={22}/>, color: '#10b981', title: 'BFSI',
+    desc: "Banking, Financial Services, and Insurance is one of India's most dynamic hiring sectors. We serve private banks, NBFCs, insurance companies, AMCs, and fintechs.",
+    subSectors: ['Private & Public Banks', 'NBFCs & Fintech', 'Insurance', 'Asset Management', 'Stockbroking & Wealth'],
+    keyFunctions: ['Sales & Relationship Management', 'Risk & Compliance', 'Finance & Treasury', 'Technology', 'Operations'],
+    levels: { junior: ['Relationship Executive', 'Credit Analyst', 'Operations Executive'], mid: ['Branch Manager', 'Credit Manager', 'Compliance Officer'], senior: ['CFO', 'CRO', 'CEO / MD'] }
+  },
+  {
+    icon: <Factory size={22}/>, color: '#475569', title: 'Manufacturing',
+    desc: "India's manufacturing renaissance — from auto to speciality chemicals — demands engineering, quality, and operations talent.",
+    subSectors: ['Automotive & Auto Components', 'Engineering & Capital Goods', 'Speciality Chemicals', 'Textile & Apparel', 'FMCG Manufacturing'],
+    keyFunctions: ['Plant & Operations', 'Quality & EHS', 'Supply Chain', 'R&D & Engineering', 'HR & IR'],
+    levels: { junior: ['Production Supervisor', 'Quality Engineer', 'Maintenance Technician'], mid: ['Plant Manager', 'Quality Head', 'Supply Chain Manager'], senior: ['VP Operations', 'COO', 'Plant Director'] }
+  },
+  {
+    icon: <Truck size={22}/>, color: '#8b5cf6', title: 'Logistics',
+    desc: "The logistics and supply chain sector has seen explosive growth with e-commerce and infrastructure development.",
+    subSectors: ['3PL & Warehousing', 'Freight & Shipping', 'E-Commerce Logistics', 'Last-Mile Delivery', 'Cold Chain'],
+    keyFunctions: ['Operations & Warehouse', 'Fleet & Transport', 'Technology', 'Sales & BD', 'HR & Finance'],
+    levels: { junior: ['Warehouse Executive', 'Fleet Coordinator', 'Operations Associate'], mid: ['Warehouse Manager', 'Regional Operations', 'Business Development Manager'], senior: ['VP Supply Chain', 'COO', 'Head of Logistics'] }
+  },
+];
+
+export default function Industries() {
+  const [activeTab, setActiveTab] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const activeInd = industries[activeTab];
+
+  return (
+    <div className="industries-page">
+      {/* PAGE BANNER */}
+      <div className="page-banner">
+        <img src={bannerIndustries} alt="Industries" className="banner-bg" />
+        <div className="banner-content">
+          <p className="section-eyebrow animate-up" style={{ justifyContent: 'center', display: 'flex' }}>Sectors We Serve</p>
+          <h1 className="animate-up delay-1">Industries We Serve</h1>
+          <p className="animate-up delay-2">Deep expertise across 8 dynamic sectors that drive India's economy.</p>
+          <nav className="breadcrumb animate-up delay-3"><Link to="/">Home</Link><span className="sep">/</span><span>Industries</span></nav>
+        </div>
+      </div>
+
+      <section className="section bg-off-white">
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: 64 }}>
+            <p className="section-eyebrow">Sector Intelligence</p>
+            <div className="gold-line centered" />
+            <h2 className="section-heading">Domain-Specific Talent Expertise</h2>
+            <p className="section-desc" style={{ margin: '0 auto' }}>Select a sector to explore our specialised networks and recruitment capabilities.</p>
+          </div>
+
+          <div className="industry-layout">
+            {/* SIDEBAR TABS */}
+            <div className="industry-sidebar">
+              {industries.map((ind, idx) => (
+                <button
+                  key={idx}
+                  className={`ind-tab ${activeTab === idx ? 'active' : ''}`}
+                  onClick={() => setActiveTab(idx)}
+                >
+                  <div className="ind-tab-icon" style={{ color: activeTab === idx ? '#c9a84c' : ind.color }}>
+                    {ind.icon}
+                  </div>
+                  <span className="ind-tab-title">{ind.title}</span>
+                  <ArrowRight className="ind-tab-arrow" size={18}/>
+                </button>
+              ))}
+            </div>
+
+            {/* CONTENT PANE */}
+            <div className="industry-content" key={activeTab}>
+              <div className="ic-header">
+                <div className="ic-icon-large" style={{ background: activeInd.color + '1a', color: activeInd.color }}>
+                  {React.cloneElement(activeInd.icon, { size: 40 })}
+                </div>
+                <h2 className="ic-title">{activeInd.title}</h2>
+              </div>
+              <p className="ic-desc">{activeInd.desc}</p>
+
+              <div className="ic-grid">
+                <div className="ic-section">
+                  <h4 className="ic-section-title" style={{ color: activeInd.color }}>
+                    <span style={{ width: 12, height: 2, background: activeInd.color }}></span> Sub-Sectors
+                  </h4>
+                  <ul className="ic-list">
+                    {activeInd.subSectors.map((s, i) => (
+                      <li key={i} className="ic-list-item">
+                        <span style={{ color: activeInd.color }}>✦</span> {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="ic-section">
+                  <h4 className="ic-section-title" style={{ color: '#0a1628' }}>
+                    <span style={{ width: 12, height: 2, background: '#0a1628' }}></span> Key Functions
+                  </h4>
+                  <ul className="ic-list">
+                    {activeInd.keyFunctions.map((f, i) => (
+                      <li key={i} className="ic-list-item">
+                        <span style={{ color: '#c9a84c' }}>✦</span> {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="ic-levels-wrapper">
+                <h4 className="ic-section-title" style={{ color: '#0a1628', marginBottom: 32 }}>Placement Levels & Roles</h4>
+                
+                {[['Junior', activeInd.levels.junior, '#eff6ff', '#1e40af'], 
+                  ['Mid-Level', activeInd.levels.mid, '#ecfdf5', '#047857'], 
+                  ['Senior / CXO', activeInd.levels.senior, '#fff7ed', '#c2410c']].map(([label, lvls, bg, col]) => (
+                  <div key={label} className="ic-level-row">
+                    <div className="ic-level-label">{label}</div>
+                    <div className="ic-level-tags">
+                      {lvls.map((l, i) => (
+                        <span key={i} className="ic-tag" style={{ background: bg, color: col }}>{l}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
