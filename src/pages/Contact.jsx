@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, ArrowRight } from 'lucide-react';
 import bannerContact from '../assets/banner-contact.jpg';
+import Marquee from '../components/Marquee';
 import './Contact.css';
+
+const marqueeText = ["LET'S CONNECT", "TALENT ADVISORY", "EXECUTIVE SEARCH", "GLOBAL NETWORK"];
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -14,10 +17,10 @@ export default function Contact() {
       <div className="page-banner">
         <img src={bannerContact} alt="Contact" className="banner-bg" />
         <div className="banner-content">
-          <p className="section-eyebrow animate-up" style={{ justifyContent: 'center', display: 'flex' }}>Get In Touch</p>
-          <h1 className="animate-up delay-1">Contact Us</h1>
-          <p className="animate-up delay-2">Reach out for hiring partnerships, career enquiries, or just to say hello.</p>
-          <nav className="breadcrumb animate-up delay-3"><Link to="/">Home</Link><span className="sep">/</span><span>Contact</span></nav>
+          <p className="section-eyebrow reveal-blur" style={{ justifyContent: 'center', display: 'flex' }}>Get In Touch</p>
+          <h1 className="reveal-blur delay-1">Contact Us</h1>
+          <p className="reveal-blur delay-2">Reach out for hiring partnerships, career enquiries, or just to say hello.</p>
+          <nav className="breadcrumb reveal-blur delay-3"><Link to="/">Home</Link><span className="sep">/</span><span>Contact</span></nav>
         </div>
       </div>
 
@@ -26,7 +29,7 @@ export default function Contact() {
           <div className="contact-grid">
 
             {/* Left */}
-            <div>
+            <div className="reveal-left">
               <p className="section-eyebrow">Our Details</p>
               <div className="gold-line" />
               <h2 className="section-heading" style={{ fontSize: '2rem', marginBottom: 32 }}>Always Happy<br/>to Help</h2>
@@ -36,8 +39,8 @@ export default function Contact() {
                   { Icon: Phone,   label: 'PHONE',         val: '+91 98200 00000' },
                   { Icon: Mail,    label: 'EMAIL',         val: 'info@intelliworx.in' },
                   { Icon: Clock,   label: 'WORKING HOURS', val: 'Mon – Sat: 9:00 AM – 7:00 PM' },
-                ].map(({ Icon, label, val }) => (
-                  <div key={label} style={{ display: 'flex', gap: 20 }}>
+                ].map(({ Icon, label, val }, idx) => (
+                  <div key={label} className={`reveal-left delay-${(idx % 4) + 1}`} style={{ display: 'flex', gap: 20 }}>
                     <div style={{ width: 50, height: 50, borderRadius: 6, background: 'linear-gradient(135deg, #0a1628, #1a3460)', color: '#c9a84c', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <Icon size={20}/>
                     </div>
@@ -51,8 +54,8 @@ export default function Contact() {
             </div>
 
             {/* Right: Form */}
-            <div className="contact-form-card">
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.6rem', marginBottom: 28, color: '#0d1b2a' }}>Send Us a Message</h3>
+            <div className="contact-form-card reveal-right">
+              <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '1.6rem', marginBottom: 28, color: '#0d1b2a' }}>Send Us a Message</h3>
               {sent && <div style={{ background: '#ecfdf5', color: '#047857', padding: '14px 18px', borderRadius: 6, marginBottom: 24, fontSize: '0.9rem', fontWeight: 600 }}>✓ Message sent! We'll be in touch shortly.</div>}
               <form onSubmit={submit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                 <div className="contact-form-row">
@@ -70,6 +73,8 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      <Marquee textArray={marqueeText} speed={15} direction="right" bgColor="#0a1628" textColor="#c9a84c" />
     </div>
   );
 }

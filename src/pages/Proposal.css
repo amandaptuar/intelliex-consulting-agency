@@ -18,7 +18,7 @@
   margin-bottom: 64px;
 }
 .prop-header h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   color: #0a1628;
   margin-bottom: 16px;
@@ -67,7 +67,7 @@
   display: block;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #6b7280;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -86,7 +86,7 @@
   padding: 24px;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
   border-radius: 4px;

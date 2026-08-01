@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { Target, ShieldCheck, Award } from 'lucide-react';
+import Marquee from '../components/Marquee';
 import './About.css';
+
+const marqueeText = ["INTEGRITY", "EXCELLENCE", "PARTNERSHIP", "TRUST", "LEADERSHIP", "QUALITY"];
 
 export default function About() {
   useEffect(() => {
@@ -14,11 +17,11 @@ export default function About() {
         <div className="about-hero-bg" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2070&auto=format&fit=crop")' }}></div>
         <div className="about-hero-overlay"></div>
         <div className="container about-hero-content">
-          <div className="ah-eyebrow">
+          <div className="ah-eyebrow reveal-blur delay-1">
             <span className="ah-line"></span> Our Story
           </div>
-          <h1 className="ah-title">From Vision to<br/>India's Most Trusted<br/>Talent Advisory</h1>
-          <p className="ah-desc">A journey built on trust, deep market expertise, and the unwavering belief that the right leadership transforms organisations.</p>
+          <h1 className="ah-title reveal-blur delay-2">From Vision to<br/>India's Most Trusted<br/>Talent Advisory</h1>
+          <p className="ah-desc reveal-blur delay-3">A journey built on trust, deep market expertise, and the unwavering belief that the right leadership transforms organisations.</p>
         </div>
       </section>
 
@@ -26,7 +29,7 @@ export default function About() {
       <section className="section about-firm">
         <div className="container">
           <div className="firm-grid">
-            <div className="firm-text">
+            <div className="firm-text reveal-left">
               <h2 className="premium-title">Built by HR Veterans,<br/>Driven by Purpose.</h2>
               <div className="gold-line"></div>
               <p className="firm-p">
@@ -36,18 +39,18 @@ export default function About() {
                 Armed with deep domain knowledge and a relentless focus on quality, we set out to build the country's most trusted talent advisory. Today, we operate across 50+ cities, serving over 200 corporate clients, from agile startups to Fortune 500 conglomerates.
               </p>
               <div className="firm-stats-inline">
-                <div className="f-stat">
+                <div className="f-stat reveal-scale delay-1">
                   <span className="fs-num">5000+</span>
                   <span className="fs-lbl">Professionals Placed</span>
                 </div>
-                <div className="f-stat">
+                <div className="f-stat reveal-scale delay-2">
                   <span className="fs-num">85%</span>
                   <span className="fs-lbl">Client Retention</span>
                 </div>
               </div>
             </div>
             {/* Right Images */}
-            <div className="firm-visuals reveal delay-2">
+            <div className="firm-visuals reveal-right delay-2">
               <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" alt="Corporate Executive" className="fv-img fv-main" />
               <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop" alt="Team Collaboration" className="fv-img fv-sub" />
               <div className="fv-experience">
@@ -62,7 +65,7 @@ export default function About() {
       {/* ── CORE VALUES ── */}
       <section className="section about-values bg-off-white">
         <div className="container">
-          <div className="values-header reveal">
+          <div className="values-header reveal-scale">
             <div className="ah-eyebrow justify-center">
               <span className="ah-line"></span> What We Stand For <span className="ah-line"></span>
             </div>
@@ -95,28 +98,31 @@ export default function About() {
       </section>
 
       {/* ── GLOBAL REACH (Stats) ── */}
-      <section className="about-stats-massive">
+      <section className="about-stats-massive reveal-expand">
         <div className="container">
           <div className="asm-grid">
-            <div className="asm-item">
+            <div className="asm-item reveal-scale delay-1">
               <div className="asm-num">50+</div>
               <div className="asm-lbl">Cities Covered Across India</div>
             </div>
-            <div className="asm-item">
+            <div className="asm-item reveal-scale delay-2">
               <div className="asm-num">200+</div>
               <div className="asm-lbl">Active Corporate Clients</div>
             </div>
-            <div className="asm-item">
+            <div className="asm-item reveal-scale delay-3">
               <div className="asm-num">5,000+</div>
               <div className="asm-lbl">Executive Placements</div>
             </div>
-            <div className="asm-item">
+            <div className="asm-item reveal-scale delay-4">
               <div className="asm-num">24h</div>
               <div className="asm-lbl">Average Response Time</div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* ── BOTTOM MARQUEE ── */}
+      <Marquee textArray={marqueeText} speed={20} direction="right" bgColor="#f8f6f2" textColor="#0a1628" />
     </div>
   );
 }

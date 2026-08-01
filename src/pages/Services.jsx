@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Award, Clock, RefreshCw, Star, GraduationCap, Monitor, Trophy } from 'lucide-react';
+import Marquee from '../components/Marquee';
 
 import './Services.css';
+
+const marqueeText = ["CXO SEARCH", "PERMANENT STAFFING", "RPO SOLUTIONS", "CONTRACT HIRING", "CAMPUS RECRUITMENT"];
 
 const bannerServices = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop";
 
@@ -52,17 +55,17 @@ export default function Services() {
       <div className="page-banner">
         <img src={bannerServices} alt="Services" className="banner-bg" />
         <div className="banner-content">
-          <p className="section-eyebrow animate-up" style={{ justifyContent: 'center', display: 'flex' }}>What We Offer</p>
-          <h1 className="animate-up delay-1">Comprehensive Recruitment Solutions</h1>
-          <p className="animate-up delay-2">Tailored talent strategies for India's most dynamic organisations across every industry.</p>
-          <nav className="breadcrumb animate-up delay-3"><Link to="/">Home</Link><span className="sep">/</span><span>Services</span></nav>
+          <p className="section-eyebrow reveal-blur" style={{ justifyContent: 'center', display: 'flex' }}>What We Offer</p>
+          <h1 className="reveal-blur delay-1">Comprehensive Recruitment Solutions</h1>
+          <p className="reveal-blur delay-2">Tailored talent strategies for India's most dynamic organisations across every industry.</p>
+          <nav className="breadcrumb reveal-blur delay-3"><Link to="/">Home</Link><span className="sep">/</span><span>Services</span></nav>
         </div>
       </div>
 
       {/* SERVICE CARDS */}
       <section className="section">
         <div className="container">
-          <div className="text-center" style={{ marginBottom: 56 }}>
+          <div className="text-center reveal-scale" style={{ marginBottom: 56 }}>
             <p className="section-eyebrow">Our Service Portfolio</p>
             <div className="gold-line centered" />
             <h2 className="section-heading">Six Ways We Deliver Talent</h2>
@@ -89,22 +92,22 @@ export default function Services() {
       </section>
 
       {/* STATS BANNER */}
-      <section className="svc-stats-banner">
+      <section className="svc-stats-banner reveal-expand">
         <div className="container">
           <div className="ssb-grid">
-            <div className="ssb-item">
+            <div className="ssb-item reveal-scale delay-1">
               <div className="ssb-num">10+</div>
               <div className="ssb-lbl">Years Experience</div>
             </div>
-            <div className="ssb-item">
+            <div className="ssb-item reveal-scale delay-2">
               <div className="ssb-num">5,000+</div>
               <div className="ssb-lbl">Placements Made</div>
             </div>
-            <div className="ssb-item">
+            <div className="ssb-item reveal-scale delay-3">
               <div className="ssb-num">200+</div>
               <div className="ssb-lbl">Client Partners</div>
             </div>
-            <div className="ssb-item">
+            <div className="ssb-item reveal-scale delay-4">
               <div className="ssb-num">85%</div>
               <div className="ssb-lbl">Client Retention</div>
             </div>
@@ -115,14 +118,14 @@ export default function Services() {
       {/* SPECIALISATIONS */}
       <section className="section bg-off-white">
         <div className="container">
-          <div className="text-center" style={{ marginBottom: 56 }}>
+          <div className="text-center reveal-scale" style={{ marginBottom: 56 }}>
             <p className="section-eyebrow">Our Two Verticals</p>
             <div className="gold-line centered" />
             <h2 className="section-heading">IT & Non-IT Specialisations</h2>
           </div>
           <div className="verticals-grid">
             
-            <Link to="/industries" className="vertical-card it-bg">
+            <Link to="/industries" className="vertical-card it-bg reveal-left">
               <div className="vc-content">
                 <div className="vc-icon">
                   <Monitor size={32} />
@@ -133,7 +136,7 @@ export default function Services() {
               </div>
             </Link>
 
-            <Link to="/industries" className="vertical-card non-it-bg">
+            <Link to="/industries" className="vertical-card non-it-bg reveal-right">
               <div className="vc-content">
                 <div className="vc-icon">
                   <Trophy size={32} />
@@ -147,6 +150,8 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      <Marquee textArray={marqueeText} speed={18} direction="left" bgColor="#0a1628" textColor="#c9a84c" />
     </div>
   );
 }

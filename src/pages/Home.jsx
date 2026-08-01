@@ -11,6 +11,7 @@ import indEdu from '../assets/ind_edu.jpg';
 import indBfsi from '../assets/banner-contact.jpg';
 import indFmcg from '../assets/banner-industries.jpg';
 import indRetail from '../assets/banner-about.jpg';
+import Marquee from '../components/Marquee';
 
 import './Home.css';
 
@@ -43,6 +44,16 @@ const slides = [
     cta1: { label: 'Industries We Serve', to: '/industries' },
     cta2: { label: 'Contact Us', to: '/contact' },
   },
+];
+
+/* ───── INFINITE MARQUEE DATA ───── */
+const marqueeText = [
+  "EXECUTIVE SEARCH",
+  "LEADERSHIP HIRING",
+  "CXO MANDATES",
+  "TALENT ACQUISITION",
+  "PAN-INDIA NETWORK",
+  "BOARD LEVEL SEARCH"
 ];
 
 /* ───── WHY US ───── */
@@ -131,22 +142,22 @@ export default function Home() {
       </section>
 
       {/* ══════ GLASS STATS (Overlapping) ══════ */}
-      <section className="stats-overlap">
+      <section className="stats-overlap reveal-expand">
         <div className="container">
           <div className="glass-stats-grid">
-            <div className="glass-stat">
+            <div className="glass-stat reveal-scale delay-1">
               <div className="gs-num">10+</div>
               <div className="gs-lbl">Years of Excellence</div>
             </div>
-            <div className="glass-stat">
+            <div className="glass-stat reveal-scale delay-2">
               <div className="gs-num">5,000+</div>
               <div className="gs-lbl">Placements Made</div>
             </div>
-            <div className="glass-stat">
+            <div className="glass-stat reveal-scale delay-3">
               <div className="gs-num">200+</div>
               <div className="gs-lbl">Corporate Clients</div>
             </div>
-            <div className="glass-stat">
+            <div className="glass-stat reveal-scale delay-4">
               <div className="gs-num">85%</div>
               <div className="gs-lbl">Client Retention</div>
             </div>
@@ -154,10 +165,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ══════ INFINITE MARQUEE ══════ */}
+      <Marquee textArray={marqueeText} speed={25} direction="left" />
+
       {/* ══════ WHY CHOOSE US ══════ */}
       <section id="why" className="section bg-off-white premium-bg-pattern">
         <div className="container">
-          <div className="premium-header reveal">
+          <div className="premium-header center reveal-scale">
             <span className="premium-eyebrow">The Intelliworx Advantage</span>
             <h2 className="premium-title">Why Leading Companies<br/>Trust Our Expertise</h2>
             <p className="premium-desc">We blend unparalleled speed, precision, and deep domain intelligence to deliver India's top 3% talent to your doorstep.</p>
@@ -185,16 +199,16 @@ export default function Home() {
 
         <div className="container">
           <div className="levels-split">
-            <div className="levels-left">
+            <div className="levels-left reveal-left">
               <span className="premium-eyebrow">Hierarchy Agnostic</span>
               <h2 className="premium-title">Leaders for Every<br/>Level of Your Business</h2>
               <p className="premium-desc" style={{ margin: '0 0 32px 0' }}>From first-time managers executing operations to visionary boardroom leaders — we have the networks to hire across every rung of the corporate ladder.</p>
               <Link to="/proposal" className="btn btn-navy">Hire Top Talent <ArrowRight size={16}/></Link>
             </div>
-            <div className="levels-right">
+            <div className="levels-right reveal-right">
               <div className="levels-pill-grid">
                 {['Junior Execs','Associate Level','Mid-Management','Sr. Manager / AVP','Director / VP','C-Suite / Board'].map((l, i) => (
-                  <div className="level-pill" key={l}>
+                  <div className="level-pill reveal-left" style={{ transitionDelay: `${i * 0.1}s` }} key={l}>
                     <span className="pill-dot"></span>
                     <span className="pill-text">{l}</span>
                   </div>
@@ -208,7 +222,7 @@ export default function Home() {
       {/* ══════ INDUSTRIES WE SERVE (Premium Bento) ══════ */}
       <section className="section bg-off-white premium-bg-pattern">
         <div className="container">
-          <div className="premium-header center">
+          <div className="premium-header center reveal-scale">
             <span className="premium-eyebrow">Sectors We Serve</span>
             <h2 className="premium-title">Domain-Specific Expertise</h2>
             <p className="premium-desc" style={{ maxWidth: 640, margin: '0 auto' }}>
@@ -243,14 +257,14 @@ export default function Home() {
       {/* ══════ TESTIMONIALS ══════ */}
       <section className="section bg-off-white premium-bg-pattern">
         <div className="container">
-          <div className="premium-header center">
+          <div className="premium-header center reveal-blur">
             <span className="premium-eyebrow">Client Stories</span>
             <h2 className="premium-title">What Our Partners Say</h2>
           </div>
 
           <div className="premium-testi-grid">
             {testimonials.map((t, i) => (
-              <div className="premium-testi-card" key={i}>
+              <div className={`premium-testi-card reveal delay-${i+1}`} key={i}>
                 <div className="ptc-bg-quote"><Quote size={140} strokeWidth={1}/></div>
                 <div className="ptc-content">
                   <div className="ptc-stars">
@@ -273,9 +287,9 @@ export default function Home() {
       </section>
 
       {/* ══════ HOME CTA ══════ */}
-      <div className="home-cta-wrapper">
+      <div className="home-cta-wrapper reveal-expand">
         <div className="container">
-          <div className="home-cta-card">
+          <div className="home-cta-card reveal-scale">
             <div className="home-cta-text">
               <h3 className="home-cta-title">Ready to Find Your Next Star Hire?</h3>
               <p className="home-cta-sub">Submit a requirement — our executive team responds within 24 hours.</p>

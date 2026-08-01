@@ -27,8 +27,9 @@
   inset: 0;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   transform: scale(1.05);
-  transition: transform 7s linear;
+  transition: transform 10s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .hero-slide.active .hero-bg { transform: scale(1); }
 
@@ -80,14 +81,14 @@
 }
 
 .hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem, 5vw, 4.2rem);
-  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(3.2rem, 6vw, 4.8rem);
+  font-weight: 800;
   color: #fff;
   line-height: 1.15;
   margin-bottom: 20px;
   text-shadow: 0 4px 30px rgba(0,0,0,0.5);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.02em;
 }
 
 .hero-sub {
@@ -197,9 +198,10 @@
   margin-bottom: 16px;
 }
 .premium-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: #25245A;
   line-height: 1.15;
   margin-bottom: 20px;
@@ -347,8 +349,9 @@
   inset: 0;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   z-index: 0;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .bento-card:hover .bento-card-bg { transform: scale(1.08); }
 
@@ -407,12 +410,12 @@
 }
 
 .bento-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
   color: #fff;
   margin-bottom: 12px;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.01em;
 }
 .bento-desc {
   font-size: 1rem;
@@ -511,9 +514,9 @@
   margin-bottom: 24px;
 }
 .ptc-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
   color: #25245A;
   line-height: 1.65;
   margin-bottom: 32px;
@@ -591,11 +594,12 @@
 }
 .home-cta-text { position: relative; z-index: 1; }
 .home-cta-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
   font-weight: 800;
   color: #0a1628;
   margin-bottom: 8px;
+  letter-spacing: -0.02em;
 }
 .home-cta-sub {
   font-family: 'Inter', sans-serif;

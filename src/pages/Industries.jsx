@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { GraduationCap, HeartPulse, ShoppingBag, Store, Monitor, Landmark, Factory, Truck, ArrowRight } from 'lucide-react';
 import bannerIndustries from '../assets/banner-industries.jpg';
+import Marquee from '../components/Marquee';
 import './Industries.css';
+
+const marqueeText = ["TECHNOLOGY", "HEALTHCARE", "FINANCE", "RETAIL", "MANUFACTURING", "LOGISTICS"];
 
 const industries = [
   {
@@ -78,29 +81,30 @@ export default function Industries() {
       <div className="page-banner">
         <img src={bannerIndustries} alt="Industries" className="banner-bg" />
         <div className="banner-content">
-          <p className="section-eyebrow animate-up" style={{ justifyContent: 'center', display: 'flex' }}>Sectors We Serve</p>
-          <h1 className="animate-up delay-1">Industries We Serve</h1>
-          <p className="animate-up delay-2">Deep expertise across 8 dynamic sectors that drive India's economy.</p>
-          <nav className="breadcrumb animate-up delay-3"><Link to="/">Home</Link><span className="sep">/</span><span>Industries</span></nav>
+          <p className="section-eyebrow reveal-blur" style={{ justifyContent: 'center', display: 'flex' }}>Sectors We Serve</p>
+          <h1 className="reveal-blur delay-1">Industries We Serve</h1>
+          <p className="reveal-blur delay-2">Deep expertise across 8 dynamic sectors that drive India's economy.</p>
+          <nav className="breadcrumb reveal-blur delay-3"><Link to="/">Home</Link><span className="sep">/</span><span>Industries</span></nav>
         </div>
       </div>
 
       <section className="section bg-off-white">
         <div className="container">
-          <div className="text-center" style={{ marginBottom: 64 }}>
+          <div className="text-center reveal-scale" style={{ marginBottom: 64 }}>
             <p className="section-eyebrow">Sector Intelligence</p>
             <div className="gold-line centered" />
             <h2 className="section-heading">Domain-Specific Talent Expertise</h2>
             <p className="section-desc" style={{ margin: '0 auto' }}>Select a sector to explore our specialised networks and recruitment capabilities.</p>
           </div>
 
-          <div className="industry-layout">
+          <div className="industry-layout reveal-expand">
             {/* SIDEBAR TABS */}
-            <div className="industry-sidebar">
+            <div className="industry-sidebar reveal-left">
               {industries.map((ind, idx) => (
                 <button
                   key={idx}
-                  className={`ind-tab ${activeTab === idx ? 'active' : ''}`}
+                  className={`ind-tab reveal-right ${activeTab === idx ? 'active' : ''}`}
+                  style={{ transitionDelay: `${idx * 0.1}s` }}
                   onClick={() => setActiveTab(idx)}
                 >
                   <div className="ind-tab-icon" style={{ color: activeTab === idx ? '#c9a84c' : ind.color }}>
@@ -113,7 +117,7 @@ export default function Industries() {
             </div>
 
             {/* CONTENT PANE */}
-            <div className="industry-content" key={activeTab}>
+            <div className="industry-content reveal-blur" key={activeTab}>
               <div className="ic-header">
                 <div className="ic-icon-large" style={{ background: activeInd.color + '1a', color: activeInd.color }}>
                   {React.cloneElement(activeInd.icon, { size: 40 })}
@@ -123,7 +127,7 @@ export default function Industries() {
               <p className="ic-desc">{activeInd.desc}</p>
 
               <div className="ic-grid">
-                <div className="ic-section">
+                <div className="ic-section reveal-scale delay-1">
                   <h4 className="ic-section-title" style={{ color: activeInd.color }}>
                     <span style={{ width: 12, height: 2, background: activeInd.color }}></span> Sub-Sectors
                   </h4>
@@ -136,7 +140,7 @@ export default function Industries() {
                   </ul>
                 </div>
                 
-                <div className="ic-section">
+                <div className="ic-section reveal-scale delay-2">
                   <h4 className="ic-section-title" style={{ color: '#0a1628' }}>
                     <span style={{ width: 12, height: 2, background: '#0a1628' }}></span> Key Functions
                   </h4>
@@ -155,8 +159,8 @@ export default function Industries() {
                 
                 {[['Junior', activeInd.levels.junior, '#eff6ff', '#1e40af'], 
                   ['Mid-Level', activeInd.levels.mid, '#ecfdf5', '#047857'], 
-                  ['Senior / CXO', activeInd.levels.senior, '#fff7ed', '#c2410c']].map(([label, lvls, bg, col]) => (
-                  <div key={label} className="ic-level-row">
+                  ['Senior / CXO', activeInd.levels.senior, '#fff7ed', '#c2410c']].map(([label, lvls, bg, col], idx) => (
+                  <div key={label} className={`ic-level-row reveal-blur delay-${idx+1}`}>
                     <div className="ic-level-label">{label}</div>
                     <div className="ic-level-tags">
                       {lvls.map((l, i) => (
@@ -170,6 +174,8 @@ export default function Industries() {
           </div>
         </div>
       </section>
+
+      <Marquee textArray={marqueeText} speed={22} direction="right" bgColor="#0a1628" textColor="#c9a84c" />
     </div>
   );
 }

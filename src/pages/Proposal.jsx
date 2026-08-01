@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import Marquee from '../components/Marquee';
 import './Proposal.css';
+
+const marqueeText = ["SUBMIT MANDATE", "HIRE LEADERS", "BUILD TEAMS", "SCALE FAST"];
 
 const bannerProposal = "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=2070&auto=format&fit=crop";
 
@@ -25,16 +28,16 @@ export default function Proposal() {
       <div className="page-banner">
         <img src={bannerProposal} alt="Request Proposal" className="banner-bg" />
         <div className="banner-content">
-          <p className="section-eyebrow animate-up" style={{ justifyContent: 'center', display: 'flex' }}>Let's Talk Talent</p>
-          <h1 className="animate-up delay-1">Request a Proposal</h1>
-          <p className="animate-up delay-2">Tell us about your hiring requirement and we'll craft a tailored recruitment strategy.</p>
-          <nav className="breadcrumb animate-up delay-3"><Link to="/">Home</Link><span className="sep">/</span><span>Proposal</span></nav>
+          <p className="section-eyebrow reveal-blur" style={{ justifyContent: 'center', display: 'flex' }}>Let's Talk Talent</p>
+          <h1 className="reveal-blur delay-1">Request a Proposal</h1>
+          <p className="reveal-blur delay-2">Tell us about your hiring requirement and we'll craft a tailored recruitment strategy.</p>
+          <nav className="breadcrumb reveal-blur delay-3"><Link to="/">Home</Link><span className="sep">/</span><span>Proposal</span></nav>
         </div>
       </div>
 
       <section className="proposal-section">
         <div className="container">
-          <div className="proposal-container">
+          <div className="proposal-container reveal-scale">
             <div className="prop-header">
               <h2>Executive Search Inquiry</h2>
               <div className="gold-line centered" style={{ marginBottom: 24 }}></div>
@@ -48,7 +51,7 @@ export default function Proposal() {
             )}
 
             <form onSubmit={submit} className="premium-form">
-              <div className="pf-row">
+              <div className="pf-row reveal-scale delay-1">
                 <div className="pf-group">
                   <label className="pf-label">Company Name *</label>
                   <input className="pf-input" type="text" placeholder="e.g. Acme Corp" required />
@@ -59,7 +62,7 @@ export default function Proposal() {
                 </div>
               </div>
 
-              <div className="pf-row">
+              <div className="pf-row reveal-scale delay-2">
                 <div className="pf-group">
                   <label className="pf-label">Corporate Email *</label>
                   <input className="pf-input" type="email" placeholder="you@company.com" required />
@@ -70,7 +73,7 @@ export default function Proposal() {
                 </div>
               </div>
 
-              <div className="pf-row">
+              <div className="pf-row reveal-scale delay-3">
                 <div className="pf-group">
                   <label className="pf-label">Industry *</label>
                   <select className="pf-input" required>
@@ -87,7 +90,7 @@ export default function Proposal() {
                 </div>
               </div>
 
-              <div className="pf-row">
+              <div className="pf-row reveal-scale delay-4">
                 <div className="pf-group">
                   <label className="pf-label">Role Level *</label>
                   <select className="pf-input" required>
@@ -101,18 +104,20 @@ export default function Proposal() {
                 </div>
               </div>
 
-              <div className="pf-group">
+              <div className="pf-group reveal-scale delay-4">
                 <label className="pf-label">Mandate Details</label>
                 <textarea className="pf-input pf-textarea" placeholder="Briefly describe the roles, critical experience required, location, and salary bands..." />
               </div>
 
-              <button type="submit" className="pf-submit">
+              <button type="submit" className="pf-submit reveal-scale delay-4">
                 Submit Mandate <ArrowRight size={20}/>
               </button>
             </form>
           </div>
         </div>
       </section>
+
+      <Marquee textArray={marqueeText} speed={15} direction="left" bgColor="#f8f6f2" textColor="#0a1628" />
     </div>
   );
 }

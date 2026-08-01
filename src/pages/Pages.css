@@ -11,7 +11,7 @@
 .form-group label {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #374151;
@@ -87,9 +87,9 @@
 .svc-card:hover .svc-icon-wrap svg { color: #fff !important; }
 
 .svc-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #0d1b2a;
   margin-bottom: 12px;
   line-height: 1.3;
@@ -127,7 +127,7 @@
   gap: 8px;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--svc-color);
@@ -200,7 +200,7 @@
 }
 .acc-title {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1rem;
   color: #0d1b2a;
   flex: 1;
