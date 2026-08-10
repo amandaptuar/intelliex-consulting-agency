@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronLeft, ChevronRight, Zap, Award, MapPin, Lock, BookOpen, Headphones, Crown, Handshake, Quote, Building2, Briefcase, Target, TrendingUp, Users, Star } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, Zap, Award, MapPin, Lock, BookOpen, Headphones, Crown, Handshake, Quote, Building2, Briefcase, Target, TrendingUp, Users, Star, Check } from 'lucide-react';
 
 import hero1 from '../assets/hero1.jpg';
 import hero2 from '../assets/hero2.jpg';
@@ -62,7 +62,7 @@ const whyUs = [
   { icon: <Award size={28}/>,      title: 'Top 3% Candidates',        desc: 'Rigorous multi-stage screening presents only the finest applicants, dramatically reducing mis-hires.' },
   { icon: <MapPin size={28}/>,     title: 'Pan-India Network',        desc: 'Active databases across 50+ cities including Tier-2 markets like Pune, Ahmedabad, and Jaipur.' },
   { icon: <Lock size={28}/>,       title: 'Confidential Searches',    desc: 'Board-level and sensitive mandates handled with complete discretion and strict confidentiality.' },
-  { icon: <BookOpen size={28}/>,   title: 'Deep Domain Knowledge',    desc: 'Vertical heads with 10+ years of expertise in IT, FMCG, Healthcare, BFSI and more.' },
+  { icon: <BookOpen size={28}/>,   title: 'Deep Domain Knowledge',    desc: 'Vertical heads with 15+ years of expertise in IT, FMCG, Healthcare, BFSI and more.' },
   { icon: <Headphones size={28}/>, title: 'Dedicated Account Manager',desc: 'One point of contact who understands your culture, team dynamics, and long-term growth plans.' },
   { icon: <Crown size={28}/>,      title: 'CXO Search Expertise',     desc: 'Specialised practice for C-suite & board mandates with access to passive high-calibre talent.' },
   { icon: <Handshake size={28}/>,  title: 'Long-Term Partnerships',   desc: '85% of clients partner with us for 3+ years — a true testament to our consistent delivery.' },
@@ -146,7 +146,7 @@ export default function Home() {
         <div className="container">
           <div className="glass-stats-grid">
             <div className="glass-stat reveal-scale delay-1">
-              <div className="gs-num">10+</div>
+              <div className="gs-num">15+</div>
               <div className="gs-lbl">Years of Excellence</div>
             </div>
             <div className="glass-stat reveal-scale delay-2">
@@ -250,6 +250,55 @@ export default function Home() {
           
           <div className="text-center" style={{ marginTop: '64px' }}>
             <Link to="/industries" className="btn btn-primary" style={{ padding: '16px 40px', fontSize: '0.95rem' }}>View All Sectors <ArrowRight size={16}/></Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════ OUR TEAM SECTION (Ultra Premium Dark) ══════ */}
+      <section className="section animated-team-bg-dark" style={{ padding: '100px 0' }}>
+        <div className="container">
+          <div className="team-glass-card">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center' }}>
+              
+              <div className="reveal-left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <span className="premium-eyebrow" style={{ color: '#c9a84c' }}>Behind The Scenes</span>
+                <h2 className="premium-title" style={{ marginBottom: '24px', color: '#fff' }}>Meet Our Team</h2>
+                <p className="premium-desc" style={{ marginBottom: '24px', lineHeight: '1.8', color: 'rgba(255,255,255,0.75)' }}>
+                  We are a group of dedicated professionals passionate about connecting the right talent with the right opportunities. With 15+ years of combined experience across various industries, our experts understand the nuances of every sector we serve.
+                </p>
+                
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px 0', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
+                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Industry Veterans:</strong> Led by former industry executives.</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
+                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Specialised Desks:</strong> Dedicated teams for diverse sectors.</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
+                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Agile Execution:</strong> 24-hour response and rapid deployment.</span>
+                  </li>
+                </ul>
+
+                <div>
+                  <Link to="/about" className="btn btn-navy" style={{ background: '#c9a84c', color: '#000', border: 'none' }}>Discover Our Story <ArrowRight size={16}/></Link>
+                </div>
+              </div>
+              
+              <div className="reveal-right delay-1" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="team-image-wrapper">
+                  <img 
+                    src="/image.png" 
+                    alt="Our Team" 
+                    className="team-image"
+                  />
+                  <div className="team-image-glow"></div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>

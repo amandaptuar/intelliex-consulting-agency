@@ -647,3 +647,103 @@
   .premium-why-card { padding: 32px 24px; }
   .hero-content { padding-top: 110px; }
 }
+
+/* ══════ ULTRA PREMIUM TEAM BACKGROUND ══════ */
+.animated-team-bg-dark {
+  position: relative;
+  background-color: #050b14;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(201, 168, 76, 0.08), transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.08), transparent 45%);
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Animated Grid Background */
+.animated-team-bg-dark::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  animation: panGrid 40s linear infinite;
+  transform: rotate(-10deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes panGrid {
+  0% { transform: rotate(-10deg) translateY(0) translateX(0); }
+  100% { transform: rotate(-10deg) translateY(-50px) translateX(-50px); }
+}
+
+.team-glass-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  padding: 56px;
+  box-shadow: 0 32px 64px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.team-check-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.15);
+  color: #c9a84c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  box-shadow: 0 0 15px rgba(201, 168, 76, 0.2);
+}
+
+.team-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.team-image {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5);
+}
+
+.team-image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.8), rgba(14, 165, 233, 0.8));
+  filter: blur(50px);
+  opacity: 0.25;
+  z-index: 1;
+  border-radius: 24px;
+  animation: pulseGlow 4s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.15; transform: translate(-50%, -50%) scale(0.95); }
+  100% { opacity: 0.35; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+@media (max-width: 768px) {
+  .team-glass-card {
+    padding: 32px 24px;
+  }
+}

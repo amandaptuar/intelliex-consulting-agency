@@ -12,13 +12,15 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="footer-brand">
-            <div className="footer-logo">
-              <div className="fl-mark">IW</div>
-              <div className="fl-text">
-                <span className="fl-main">INTELLIWORX</span>
-                <span className="fl-sub">CONSULTING</span>
-              </div>
-            </div>
+            <Link to="/" style={{ display: 'inline-block', marginBottom: '16px' }}>
+              <img 
+                src="/image copy.png" 
+                alt="Intelliworx Consulting" 
+                style={{ height: '64px', width: 'auto', userSelect: 'none', WebkitUserDrag: 'none' }} 
+                draggable="false"
+                onContextMenu={(e) => e.preventDefault()}
+              />
+            </Link>
             <p className="brand-desc">
               India's premier recruitment consultancy placing talent from Junior to CXO across every industry, every sector, every city.
             </p>
@@ -29,9 +31,9 @@ export default function Footer() {
               <Link to="/contact" className="social-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
               </Link>
-              <Link to="/contact" className="social-btn">
+              <a href="https://www.facebook.com/intelliworxconsulting" target="_blank" rel="noopener noreferrer" className="social-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -60,7 +62,7 @@ export default function Footer() {
             <h4 className="fcol-title">Contact Info</h4>
             <ul className="contact-list">
               <li><MapPin size={14} className="ci"/><span>Plot No 384, Industrial Area, Phase 2, Chandigarh – 160002</span></li>
-              <li><Phone size={14} className="ci"/><span>+91 98200 00000</span></li>
+              <li><Phone size={14} className="ci"/><span>+91 98723 72387</span></li>
               <li><Mail size={14} className="ci"/><span>info@intelliworx.in</span></li>
               <li style={{ paddingLeft: 22, color: '#6b7280', fontSize: '0.85rem' }}>Mon–Sat: 9:00 AM – 7:00 PM</li>
             </ul>

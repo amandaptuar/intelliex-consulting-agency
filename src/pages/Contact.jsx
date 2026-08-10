@@ -36,7 +36,7 @@ export default function Contact() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
                 {[
                   { Icon: MapPin,  label: 'ADDRESS',       val: 'Plot No 384, Industrial Area, Phase 2, Chandigarh – 160002' },
-                  { Icon: Phone,   label: 'PHONE',         val: '+91 98200 00000' },
+                  { Icon: Phone,   label: 'PHONE',         val: '+91 98723 72387' },
                   { Icon: Mail,    label: 'EMAIL',         val: 'info@intelliworx.in' },
                   { Icon: Clock,   label: 'WORKING HOURS', val: 'Mon – Sat: 9:00 AM – 7:00 PM' },
                 ].map(({ Icon, label, val }, idx) => (

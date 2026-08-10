@@ -54,7 +54,7 @@ export default function About() {
               <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1600&auto=format&fit=crop" alt="Corporate Executive" className="fv-img fv-main" />
               <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop" alt="Team Collaboration" className="fv-img fv-sub" />
               <div className="fv-experience">
-                <span className="fvx-num">10+</span>
+                <span className="fvx-num">15+</span>
                 <span className="fvx-txt">Years of<br/>Excellence</span>
               </div>
             </div>
