@@ -73,6 +73,21 @@ export default function Industries() {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    // When the active tab changes, the industry-content pane is remounted (due to key={activeTab}).
+    // We manually add the 'visible' class to trigger its entrance animations, since the global
+    // IntersectionObserver only runs on route changes.
+    const timeout = setTimeout(() => {
+      const contentPane = document.querySelector('.industry-content');
+      if (contentPane) {
+        contentPane.classList.add('visible');
+        const elements = contentPane.querySelectorAll('.reveal, .reveal-scale, .reveal-blur, .reveal-left, .reveal-right');
+        elements.forEach(el => el.classList.add('visible'));
+      }
+    }, 50);
+    return () => clearTimeout(timeout);
+  }, [activeTab]);
+
   const activeInd = industries[activeTab];
 
   return (
@@ -103,7 +118,7 @@ export default function Industries() {
               {industries.map((ind, idx) => (
                 <button
                   key={idx}
-                  className={`ind-tab reveal-right ${activeTab === idx ? 'active' : ''}`}
+                  className={`ind-tab ${activeTab === idx ? 'active' : ''}`}
                   style={{ transitionDelay: `${idx * 0.1}s` }}
                   onClick={() => setActiveTab(idx)}
                 >
