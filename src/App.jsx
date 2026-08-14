@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Industries from './pages/Industries';
 import Contact from './pages/Contact';
 import Proposal from './pages/Proposal';
+import Clients from './pages/Clients';
 import './pages/Pages.css';
 
 import './pages/Pages.css';
@@ -53,6 +54,7 @@ function App() {
             <Route path="/industries" element={<Industries />} />
             <Route path="/proposal"   element={<Proposal />} />
             <Route path="/contact"    element={<Contact />} />
+            <Route path="/clients"    element={<Clients />} />
           </Routes>
         </main>
         <Footer />

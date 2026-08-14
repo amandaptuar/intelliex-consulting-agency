@@ -720,14 +720,12 @@
   .home-cta-title { font-size: 1.75rem; }
 }
 @media (max-width: 768px) {
-  .hero-slider { min-height: 750px; }
+  .hero-slider { min-height: 600px; height: 100vh; }
   .slider-nav { display: none; }
   .glass-stats-grid { grid-template-columns: 1fr 1fr; }
   .levels-pill-grid { grid-template-columns: 1fr; }
   .hero-content { 
-    padding-top: 120px; 
-    padding-bottom: 0; 
-    padding: 32px 24px;
+    padding: 60px 24px 160px 24px;
   }
   .call-now-premium-card {
     flex-direction: column;
@@ -744,7 +742,7 @@
   }
 }
 @media (max-width: 480px) {
-  .hero-slider { min-height: 750px; }
+  .hero-slider { min-height: 550px; height: 100vh; }
   .premium-why-grid { grid-template-columns: 1fr; }
   .glass-stats-grid { grid-template-columns: 1fr; }
   .glass-stat { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.05); }
@@ -754,7 +752,7 @@
   .hero-title { font-size: 2.2rem; }
   .gs-num { font-size: 2.2rem; }
   .premium-why-card { padding: 32px 24px; }
-  .hero-content { padding-top: 110px; }
+  .hero-content { padding: 40px 20px 180px 20px; }
 }
 
 /* ══════ ULTRA PREMIUM TEAM BACKGROUND ══════ */

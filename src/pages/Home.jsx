@@ -56,6 +56,8 @@ const marqueeText = [
   "BOARD LEVEL SEARCH"
 ];
 
+
+
 const clientLogos = [
   "/client-logos/0_RpLu41NQ0YhF7Wlw.png",
   "/client-logos/462066949_8478367048915791_1719528953997860405_n.jpg",

@@ -1,0 +1,136 @@
+.clients-page {
+  width: 100%;
+}
+
+/* LOGO GRID */
+.clients-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.client-logo-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.client-logo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.client-logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.client-logo-card:hover .client-logo-img {
+  transform: scale(1.05);
+}
+
+/* SECTOR CLIENTS GRID */
+.sector-clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.sector-client-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--sector-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.sector-client-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.scc-header {
+  padding: 24px 32px;
+  background: rgba(0,0,0,0.01);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.scc-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scc-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0a1628;
+  margin: 0;
+}
+
+.scc-body {
+  padding: 24px 32px;
+  flex: 1;
+}
+
+.scc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.scc-tag {
+  background: #f8f9fa;
+  color: #4b5563;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.sector-client-card:hover .scc-tag {
+  background: #fff;
+  border-color: rgba(0,0,0,0.1);
+  color: var(--sector-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .clients-logo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+  }
+  
+  .client-logo-card {
+    height: 100px;
+    padding: 16px;
+  }
+
+  .sector-clients-grid {
+    grid-template-columns: 1fr;
+  }
+}

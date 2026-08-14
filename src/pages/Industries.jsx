@@ -74,7 +74,7 @@ const industries = [
   {
     icon: <Factory size={22}/>, color: '#475569', title: 'Manufacturing',
     desc: "India's manufacturing renaissance — from auto to speciality chemicals — demands engineering, quality, and operations talent.",
-    subSectors: ['Automotive & Auto Components', 'Engineering & Capital Goods', 'Speciality Chemicals', 'Textile & Apparel', 'FMCG Manufacturing'],
+    subSectors: ['Automotive & Auto Components', 'Engineering & Capital Goods', 'Speciality Chemicals', 'Textile & Apparel', 'Manufacturing'],
     keyFunctions: ['Plant & Operations', 'Quality & EHS', 'Supply Chain', 'R&D & Engineering', 'HR & IR'],
     levels: { junior: ['Production Supervisor', 'Quality Engineer', 'Maintenance Technician'], mid: ['Plant Manager', 'Quality Head', 'Supply Chain Manager'], senior: ['VP Operations', 'COO', 'Plant Director'] }
   },
