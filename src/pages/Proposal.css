@@ -8,9 +8,10 @@
 .proposal-container {
   max-width: 900px;
   margin: 0 auto;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.05);
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(10, 22, 40, 0.08), 0 0 0 1px rgba(10, 22, 40, 0.05);
+  border-top: 6px solid #c9a84c;
   padding: 80px;
 }
 .proposal-result-container {
@@ -64,10 +65,10 @@
 }
 .pf-input {
   width: 100%;
-  padding: 12px 0;
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid #e5e7eb;
+  padding: 16px 20px;
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
   font-family: 'Inter', sans-serif;
   font-size: 1.05rem;
   color: #0a1628;
@@ -75,7 +76,9 @@
   outline: none;
 }
 .pf-input:focus {
-  border-bottom-color: #c9a84c;
+  background: #fff;
+  border-color: #c9a84c;
+  box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.1);
 }
 .pf-input::placeholder {
   color: #9ca3af;

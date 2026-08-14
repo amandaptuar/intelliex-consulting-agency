@@ -116,7 +116,7 @@ export default function Proposal() {
                     <label className="pf-label">Service Needed *</label>
                     <select className="pf-input" name="serviceNeeded" value={formData.serviceNeeded} onChange={handleChange} required>
                       <option value="">Select service</option>
-                      {['Permanent Staffing','Executive Search','Contract Staffing','RPO Support','Bulk Hiring'].map(o => <option key={o} value={o}>{o}</option>)}
+                      {['Permanent Staffing','Executive Search','Contract Staffing','Leadership Hiring','Entry-Level Talent Hiring'].map(o => <option key={o} value={o}>{o}</option>)}
                     </select>
                   </div>
                 </div>

@@ -51,7 +51,7 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="fcol-title">Our Services</h4>
             <ul className="fcol-list">
-              {['Permanent Staffing','Executive Search','Contract Staffing','RPO Solutions','Leadership Hiring','Campus Recruitment'].map(s => (
+              {['Permanent Staffing','Executive Search','Contract Staffing','Leadership Hiring','Entry-Level Talent Hiring'].map(s => (
                 <li key={s}><Link to="/services">{s}</Link></li>
               ))}
             </ul>
@@ -61,8 +61,7 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="fcol-title">Contact Info</h4>
             <ul className="contact-list">
-              <li><MapPin size={14} className="ci"/><span>Plot No 384, Industrial Area, Phase 2, Chandigarh – 160002</span></li>
-              <li><Phone size={14} className="ci"/><span>+91 98723 72387</span></li>
+              <li><Phone size={14} className="ci"/><span>+91 98765 43210</span></li>
               <li><Mail size={14} className="ci"/><span>info@intelliworx.in</span></li>
               <li style={{ paddingLeft: 22, color: '#6b7280', fontSize: '0.85rem' }}>Mon–Sat: 9:00 AM – 7:00 PM</li>
             </ul>

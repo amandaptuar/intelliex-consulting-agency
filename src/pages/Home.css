@@ -603,9 +603,105 @@
 }
 .home-cta-sub {
   font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
-  color: rgba(10,22,40,0.85);
-  font-weight: 500;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+/* ───── PREMIUM CALL NOW CARD ───── */
+.call-now-premium-card {
+  background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%);
+  border-radius: 20px;
+  padding: 50px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 30px 60px rgba(10, 22, 40, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.call-now-premium-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cnc-icon-wrap {
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #c9a84c;
+}
+
+.cnc-text {
+  flex: 1;
+}
+
+.cnc-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.cnc-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.btn-call-now {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #c9a84c;
+  padding: 18px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-call-now:hover {
+  background: #e2c27d;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(201, 168, 76, 0.3);
+}
+
+.bcn-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #0a1628;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.bcn-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0a1628;
 }
 
 /* ───── RESPONSIVE ───── */
@@ -631,7 +727,20 @@
   .hero-content { 
     padding-top: 120px; 
     padding-bottom: 0; 
-    align-items: flex-start; 
+    padding: 32px 24px;
+  }
+  .call-now-premium-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px;
+    gap: 24px;
+  }
+  .cnc-icon-wrap {
+    width: 70px;
+    height: 70px;
+  }
+  .cnc-title {
+    font-size: 1.8rem;
   }
 }
 @media (max-width: 480px) {

@@ -23,6 +23,7 @@ const Navbar = () => {
     { name: 'Our Story', path: '/about' },
     { name: 'Services',  path: '/services' },
     { name: 'Industries',path: '/industries' },
+    { name: 'Our Clients',path: '/#brands-marquee' },
     { name: 'Proposal',  path: '/proposal' },
     { name: 'Contact',   path: '/contact' },
   ];
@@ -35,13 +36,11 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link to="/" className="logo">
-            <img 
-              src="/image copy.png" 
-              alt="Intelliworx Consulting" 
-              style={{ height: '54px', width: 'auto', userSelect: 'none', WebkitUserDrag: 'none' }} 
-              draggable="false"
-              onContextMenu={(e) => e.preventDefault()}
-            />
+            <div className="logo-mark">IX</div>
+            <div className="logo-text-block">
+              <span className="logo-main">INTELLIWORX</span>
+              <span className="logo-sub">CONSULTING</span>
+            </div>
           </Link>
 
           {/* Desktop Links */}

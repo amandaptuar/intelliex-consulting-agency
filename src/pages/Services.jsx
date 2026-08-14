@@ -5,7 +5,7 @@ import Marquee from '../components/Marquee';
 
 import './Services.css';
 
-const marqueeText = ["CXO SEARCH", "PERMANENT STAFFING", "RPO SOLUTIONS", "CONTRACT HIRING", "CAMPUS RECRUITMENT"];
+const marqueeText = ["CXO SEARCH", "PERMANENT STAFFING", "ENTRY LEVEL TALENT", "CONTRACT HIRING"];
 
 const bannerServices = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop";
 
@@ -29,12 +29,6 @@ const services = [
     bullets: ['Short & long-term contracts','Payroll management','Compliance & statutory','On-demand scale-up'],
   },
   {
-    icon: <RefreshCw size={28}/>, color: '#ea580c', light: '#fff7ed',
-    title: 'RPO Solutions',
-    desc: 'We become your embedded talent acquisition team for high-volume or ongoing hiring.',
-    bullets: ['Embedded TA team','ATS management','Employer branding','Analytics & reporting'],
-  },
-  {
     icon: <Star size={28}/>, color: '#d97706', light: '#fffbeb',
     title: 'Leadership Hiring',
     desc: 'Strategic search for GMs, Business Heads, and functional leaders driving transformation.',
@@ -42,8 +36,8 @@ const services = [
   },
   {
     icon: <GraduationCap size={28}/>, color: '#16a34a', light: '#f0fdf4',
-    title: 'Campus Recruitment',
-    desc: 'Structured campus hiring programmes with top tier-1 and tier-2 institutes across India.',
+    title: 'Entry-Level Talent Hiring',
+    desc: 'Structured entry-level hiring programmes with top tier-1 and tier-2 institutes across India.',
     bullets: ['College tie-ups','Pre-placement workshops','Bulk hiring drives','Graduate trainee programmes'],
   },
 ];
@@ -68,7 +62,7 @@ export default function Services() {
           <div className="text-center reveal-scale" style={{ marginBottom: 56 }}>
             <p className="section-eyebrow">Our Service Portfolio</p>
             <div className="gold-line centered" />
-            <h2 className="section-heading">Six Ways We Deliver Talent</h2>
+            <h2 className="section-heading">Five Ways We Deliver Talent</h2>
           </div>
 
           <div className="services-grid">
@@ -142,7 +136,7 @@ export default function Services() {
                   <Trophy size={32} />
                 </div>
                 <h3 className="vc-title">Non-IT Recruitment</h3>
-                <p className="vc-desc">Sales, Finance, HR, Operations — across FMCG, Healthcare, Retail, BFSI, Education and more.</p>
+                <p className="vc-desc">Sales, Finance, HR, Operations — across Manufacturing, Healthcare, Retail, BFSI, Education and more.</p>
                 <div className="vc-link-btn">Explore Vertical <ArrowRight size={16}/></div>
               </div>
             </Link>

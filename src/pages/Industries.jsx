@@ -13,28 +13,43 @@ const industries = [
     desc: "India's education sector is undergoing rapid transformation with EdTech disruption and government policy reforms. We place talent across K-12, higher education, and online learning platforms.",
     subSectors: ['K-12 Schools & Chains', 'EdTech & Online Learning', 'Higher Education & Universities', 'Coaching & Test Prep', 'Vocational Training'],
     keyFunctions: ['Academic Directors', 'Sales & Marketing Heads', 'Content & Curriculum Leads', 'HR Business Partners', 'Technology & Product'],
-    levels: { junior: ['Academic Coordinator', 'Content Writer', 'Sales Executive'], mid: ['School Principal', 'Regional Sales Manager', 'Product Manager'], senior: ['CEO / Director', 'VP Sales', 'Chief Academic Officer'] }
+    levels: { junior: ['Academic Coordinator', 'Content Writer', 'Sales Executive'], mid: ['School Principal', 'Regional Sales Manager', 'Product Manager'], senior: ['CEO / Director', 'VP Sales', 'Chief Academic Officer'] },
+    clientNames: [
+      "Amity University",
+      "Educomp Solutions Ltd.",
+      "iDiscoveri Education - Xseed",
+      "Chandigarh University",
+      "Zee Education – Mount Litera Schools"
+    ]
   },
   {
     icon: <HeartPulse size={22}/>, color: '#e11d48', title: 'Healthcare',
     desc: "One of India's fastest-growing sectors, healthcare demands specialised talent across clinical, administrative, and technology functions. We have deep networks in hospitals, pharma, and diagnostics.",
     subSectors: ['Hospitals & Hospital Chains', 'Pharmaceutical Companies', 'Diagnostics & Pathology', 'MedTech & Medical Devices', 'Health Insurance'],
     keyFunctions: ['Clinical Operations', 'Medical Affairs', 'Regulatory Affairs', 'Sales & Marketing', 'Finance & HR'],
-    levels: { junior: ['MR / Sales Rep', 'Lab Technician', 'HR Executive'], mid: ['Brand Manager', 'Area Sales Manager', 'Hospital Administrator'], senior: ['CMO / Medical Director', 'VP Sales', 'CEO'] }
+    levels: { junior: ['MR / Sales Rep', 'Lab Technician', 'HR Executive'], mid: ['Brand Manager', 'Area Sales Manager', 'Hospital Administrator'], senior: ['CMO / Medical Director', 'VP Sales', 'CEO'] },
+    clientNames: [
+      "Cipla",
+      "Dr. Batra's Positive Health Clinics",
+      "Kaya Skin Clinics",
+      "Loreal India - Loreal, Vichy, Lancome etc.",
+      "VLCC Ltd."
+    ]
   },
-  {
-    icon: <ShoppingBag size={22}/>, color: '#f59e0b', title: 'FMCG',
-    desc: "The FMCG sector in India is highly competitive and talent-intensive. We specialise in placing sales, marketing, supply chain, and category management professionals.",
-    subSectors: ['Food & Beverages', 'Personal Care', 'Home Care', 'Packaged Foods', 'Beverages & Dairy'],
-    keyFunctions: ['Sales & Distribution', 'Marketing & Brand', 'Supply Chain', 'Category Management', 'Finance & HR'],
-    levels: { junior: ['Territory Sales Officer', 'Graduate Trainee', 'Brand Executive'], mid: ['RSM / ZSM', 'Brand Manager', 'SCM Manager'], senior: ['National Sales Head', 'CMO', 'CEO / MD'] }
-  },
+
   {
     icon: <Store size={22}/>, color: '#ec4899', title: 'Retail',
     desc: "India's retail revolution — from organised formats to quick commerce — creates constant demand for operations, merchandising, and customer experience talent.",
     subSectors: ['Organised Retail', 'E-Commerce', 'Quick Commerce', 'Fashion & Lifestyle', 'Grocery & Hypermarkets'],
     keyFunctions: ['Store Operations', 'Merchandising', 'Supply Chain', 'Marketing', 'Technology'],
-    levels: { junior: ['Store Executive', 'Merchandiser', 'Customer Service'], mid: ['Store Manager', 'Category Manager', 'Regional Operations'], senior: ['VP Operations', 'Chief Retail Officer', 'CEO'] }
+    levels: { junior: ['Store Executive', 'Merchandiser', 'Customer Service'], mid: ['Store Manager', 'Category Manager', 'Regional Operations'], senior: ['VP Operations', 'Chief Retail Officer', 'CEO'] },
+    clientNames: [
+      "Arvind Brands – Arrow, Lee, Wrangler, Esprit etc.",
+      "Wills Life Style",
+      "Bestseller India – Jack & Jones, Only, Veromoda etc.",
+      "Spencer’s Retail – RPG Group",
+      "Nik Bakers"
+    ]
   },
   {
     icon: <Monitor size={22}/>, color: '#0284c7', title: 'IT & ITeS',
@@ -48,7 +63,13 @@ const industries = [
     desc: "Banking, Financial Services, and Insurance is one of India's most dynamic hiring sectors. We serve private banks, NBFCs, insurance companies, AMCs, and fintechs.",
     subSectors: ['Private & Public Banks', 'NBFCs & Fintech', 'Insurance', 'Asset Management', 'Stockbroking & Wealth'],
     keyFunctions: ['Sales & Relationship Management', 'Risk & Compliance', 'Finance & Treasury', 'Technology', 'Operations'],
-    levels: { junior: ['Relationship Executive', 'Credit Analyst', 'Operations Executive'], mid: ['Branch Manager', 'Credit Manager', 'Compliance Officer'], senior: ['CFO', 'CRO', 'CEO / MD'] }
+    levels: { junior: ['Relationship Executive', 'Credit Analyst', 'Operations Executive'], mid: ['Branch Manager', 'Credit Manager', 'Compliance Officer'], senior: ['CFO', 'CRO', 'CEO / MD'] },
+    clientNames: [
+      "Care Ratings",
+      "CRIF Highmark",
+      "TVS Financial Services",
+      "Ujjivan Fnance"
+    ]
   },
   {
     icon: <Factory size={22}/>, color: '#475569', title: 'Manufacturing',
@@ -185,6 +206,19 @@ export default function Industries() {
                   </div>
                 ))}
               </div>
+
+              {activeInd.clientNames && activeInd.clientNames.length > 0 && (
+                <div className="ic-clients-wrapper reveal-blur delay-4">
+                  <h4 className="ic-section-title" style={{ color: '#0a1628', marginTop: 40, marginBottom: 20 }}>Our Clients</h4>
+                  <div className="ic-clients-text-grid">
+                    {activeInd.clientNames.map((name, idx) => (
+                      <div key={idx} className="ic-client-badge">
+                        <span style={{ color: '#c9a84c', marginRight: '8px' }}>✦</span> {name}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

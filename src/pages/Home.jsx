@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronLeft, ChevronRight, Zap, Award, MapPin, Lock, BookOpen, Headphones, Crown, Handshake, Quote, Building2, Briefcase, Target, TrendingUp, Users, Star, Check } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, Zap, Award, MapPin, Lock, BookOpen, Headphones, Crown, Handshake, Quote, Building2, Briefcase, Target, TrendingUp, Users, Star, Check, Phone } from 'lucide-react';
 
 import hero1 from '../assets/hero1.jpg';
 import hero2 from '../assets/hero2.jpg';
@@ -12,6 +12,7 @@ import indBfsi from '../assets/banner-contact.jpg';
 import indFmcg from '../assets/banner-industries.jpg';
 import indRetail from '../assets/banner-about.jpg';
 import Marquee from '../components/Marquee';
+import LogoMarquee from '../components/LogoMarquee';
 
 import './Home.css';
 
@@ -20,9 +21,9 @@ const slides = [
   {
     id: 1,
     image: hero1,
-    eyebrow: 'India\'s Trusted Talent Partner',
+    eyebrow: 'Our Vision to Make India\'s Best Talent Partner',
     title: 'We Place Leaders\nWho Drive Growth',
-    sub: 'From campus freshers to C-suite executives — Intelliworx connects India\'s finest talent with the country\'s most admired organisations.',
+    sub: 'From entry-level talent to C-suite executives — Intelliworx connects India\'s finest talent with the country\'s most admired organisations. We work for startups to large enterprises.',
     cta1: { label: 'Request Proposal', to: '/proposal' },
     cta2: { label: 'Our Services', to: '/services' },
   },
@@ -40,13 +41,12 @@ const slides = [
     image: hero3,
     eyebrow: '50+ Cities · 200+ Clients · 5000+ Placements',
     title: 'Pan-India Talent\nNetworks, Built for You',
-    sub: 'Deep domain expertise across IT, FMCG, Healthcare, Retail, BFSI, Manufacturing, Logistics & Education.',
+    sub: 'Deep domain expertise across IT, Manufacturing, Healthcare, Retail, BFSI, Logistics & Education.',
     cta1: { label: 'Industries We Serve', to: '/industries' },
     cta2: { label: 'Contact Us', to: '/contact' },
   },
 ];
 
-/* ───── INFINITE MARQUEE DATA ───── */
 const marqueeText = [
   "EXECUTIVE SEARCH",
   "LEADERSHIP HIRING",
@@ -56,13 +56,39 @@ const marqueeText = [
   "BOARD LEVEL SEARCH"
 ];
 
+const clientLogos = [
+  "/client-logos/0_RpLu41NQ0YhF7Wlw.png",
+  "/client-logos/462066949_8478367048915791_1719528953997860405_n.jpg",
+  "/client-logos/7F1LczSy_400x400.jpg",
+  "/client-logos/7f679411331491.560f5f9c84356.jpg",
+  "/client-logos/8355.png",
+  "/client-logos/Educomp_logo.jpg",
+  "/client-logos/Expectation-of-Recruitment-companies1 (1).jpg",
+  "/client-logos/Hindware-Bath-Fittings-Logo_pngimagesfree.com_.png",
+  "/client-logos/L_Oréal_logo.svg.png",
+  "/client-logos/RZxLWW91_400x400.jpg",
+  "/client-logos/Smera-logo-new-3-revised-1024x421.png",
+  "/client-logos/Spencers-1280x720.jpg",
+  "/client-logos/amity-university-logo_freelogovectors.net_.png",
+  "/client-logos/banner-logo-1.png",
+  "/client-logos/download.png",
+  "/client-logos/fc81cf41ccd7e9cf6d3ec82980dfcdea.jpg",
+  "/client-logos/images (1).png",
+  "/client-logos/images (3).png",
+  "/client-logos/images (4).png",
+  "/client-logos/images (5).png",
+  "/client-logos/images (6).png",
+  "/client-logos/images.jpeg",
+  "/client-logos/images.png"
+];
+
 /* ───── WHY US ───── */
 const whyUs = [
   { icon: <Zap size={28}/>,        title: 'Speed of Placement',       desc: '15-day average time-to-fill for mid-roles. 30 days for CXO mandates — industry-leading turnaround.' },
-  { icon: <Award size={28}/>,      title: 'Top 3% Candidates',        desc: 'Rigorous multi-stage screening presents only the finest applicants, dramatically reducing mis-hires.' },
-  { icon: <MapPin size={28}/>,     title: 'Pan-India Network',        desc: 'Active databases across 50+ cities including Tier-2 markets like Pune, Ahmedabad, and Jaipur.' },
+  { icon: <Award size={28}/>,      title: 'Top 5% Candidates',        desc: 'Rigorous multi-stage screening presents only the finest applicants, dramatically reducing mis-hires.' },
+  { icon: <MapPin size={28}/>,     title: 'Pan-India Network',        desc: 'Active databases across 50+ cities including tier 1 like Mumbai, Bangalore, Delhi NCR and tier 2 market.' },
   { icon: <Lock size={28}/>,       title: 'Confidential Searches',    desc: 'Board-level and sensitive mandates handled with complete discretion and strict confidentiality.' },
-  { icon: <BookOpen size={28}/>,   title: 'Deep Domain Knowledge',    desc: 'Vertical heads with 15+ years of expertise in IT, FMCG, Healthcare, BFSI and more.' },
+  { icon: <BookOpen size={28}/>,   title: 'Deep Domain Knowledge and Expertise',    desc: 'Vertical heads with 15+ years of expertise in IT, Manufacturing, Healthcare, BFSI and more.' },
   { icon: <Headphones size={28}/>, title: 'Dedicated Account Manager',desc: 'One point of contact who understands your culture, team dynamics, and long-term growth plans.' },
   { icon: <Crown size={28}/>,      title: 'CXO Search Expertise',     desc: 'Specialised practice for C-suite & board mandates with access to passive high-calibre talent.' },
   { icon: <Handshake size={28}/>,  title: 'Long-Term Partnerships',   desc: '85% of clients partner with us for 3+ years — a true testament to our consistent delivery.' },
@@ -74,13 +100,13 @@ const industries = [
   { icon: <Users size={24}/>,    label: 'Healthcare',     bg: '#f43f5e', span: 1, image: indHealth, desc: 'Clinical, admin, and tech talent for modern healthcare and pharma.' },
   { icon: <BookOpen size={24}/>, label: 'Education',      bg: '#6366f1', span: 1, image: indEdu, desc: 'Academic leads and edtech product specialists.' },
   { icon: <TrendingUp size={24}/>,label: 'BFSI',          bg: '#10b981', span: 1, image: indBfsi, desc: 'Risk, compliance, and wealth management experts.' },
-  { icon: <Briefcase size={24}/>,label: 'FMCG',           bg: '#f59e0b', span: 2, image: indFmcg, desc: 'Sales, supply chain, and marketing professionals driving consumer brands.' },
+  { icon: <Briefcase size={24}/>,label: 'Manufacturing',           bg: '#f59e0b', span: 2, image: indFmcg, desc: 'Sales, supply chain, and marketing professionals driving consumer brands.' },
   { icon: <Building2 size={24}/>,label: 'Retail',         bg: '#ec4899', span: 1, image: indRetail, desc: 'Operations and merchandising for organised retail.' },
 ];
 
 /* ───── TESTIMONIALS ───── */
 const testimonials = [
-  { quote: '"Intelliworx filled our VP Sales position in just 18 days. Exceptional quality and speed that completely transformed our hiring timeline."', name: 'Rajesh Mehta', role: 'Director HR, FMCG Conglomerate' },
+  { quote: '"Intelliworx filled our VP Sales position in just 18 days. Exceptional quality and speed that completely transformed our hiring timeline."', name: 'Rajesh Mehta', role: 'Director HR, Manufacturing Conglomerate' },
   { quote: '"Their deep understanding of the BFSI sector helped us onboard a top-notch CTO within weeks. Highly recommended for executive search."', name: 'Priya Sharma', role: 'CHRO, Leading NBFC' },
   { quote: '"We have partnered with Intelliworx for 3 years and they remain our most trusted talent partner. They truly understand our culture."', name: 'Anil Kumar', role: 'MD, IT Services Firm' },
 ];
@@ -166,7 +192,11 @@ export default function Home() {
       </section>
 
       {/* ══════ INFINITE MARQUEE ══════ */}
-      <Marquee textArray={marqueeText} speed={25} direction="left" />
+      <div id="brands-marquee" style={{ display: 'flex', flexDirection: 'column' }}>
+        <Marquee textArray={marqueeText} speed={25} direction="left" />
+        <div style={{ height: '4px', background: 'linear-gradient(90deg, #c9a84c, #e2c27d, #c9a84c)' }}></div>
+        <LogoMarquee imageArray={clientLogos} speed={40} direction="right" bgColor="#f8f9fa" />
+      </div>
 
       {/* ══════ WHY CHOOSE US ══════ */}
       <section id="why" className="section bg-off-white premium-bg-pattern">
@@ -174,7 +204,7 @@ export default function Home() {
           <div className="premium-header center reveal-scale">
             <span className="premium-eyebrow">The Intelliworx Advantage</span>
             <h2 className="premium-title">Why Leading Companies<br/>Trust Our Expertise</h2>
-            <p className="premium-desc">We blend unparalleled speed, precision, and deep domain intelligence to deliver India's top 3% talent to your doorstep.</p>
+            <p className="premium-desc">We blend unparalleled speed, precision, and deep domain intelligence to deliver India's top 5% talent to your doorstep.</p>
           </div>
 
           <div className="premium-why-grid">
@@ -254,50 +284,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════ OUR TEAM SECTION (Ultra Premium Dark) ══════ */}
-      <section className="section animated-team-bg-dark" style={{ padding: '100px 0' }}>
+      {/* ══════ CALL NOW SECTION ══════ */}
+      <section className="section bg-off-white" style={{ paddingTop: '0', paddingBottom: '40px' }}>
         <div className="container">
-          <div className="team-glass-card">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center' }}>
-              
-              <div className="reveal-left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <span className="premium-eyebrow" style={{ color: '#c9a84c' }}>Behind The Scenes</span>
-                <h2 className="premium-title" style={{ marginBottom: '24px', color: '#fff' }}>Meet Our Team</h2>
-                <p className="premium-desc" style={{ marginBottom: '24px', lineHeight: '1.8', color: 'rgba(255,255,255,0.75)' }}>
-                  We are a group of dedicated professionals passionate about connecting the right talent with the right opportunities. With 15+ years of combined experience across various industries, our experts understand the nuances of every sector we serve.
-                </p>
-                
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px 0', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
-                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Industry Veterans:</strong> Led by former industry executives.</span>
-                  </li>
-                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
-                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Specialised Desks:</strong> Dedicated teams for diverse sectors.</span>
-                  </li>
-                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
-                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Agile Execution:</strong> 24-hour response and rapid deployment.</span>
-                  </li>
-                </ul>
-
-                <div>
-                  <Link to="/about" className="btn btn-navy" style={{ background: '#c9a84c', color: '#000', border: 'none' }}>Discover Our Story <ArrowRight size={16}/></Link>
-                </div>
-              </div>
-              
-              <div className="reveal-right delay-1" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div className="team-image-wrapper">
-                  <img 
-                    src="/image.png" 
-                    alt="Our Team" 
-                    className="team-image"
-                  />
-                  <div className="team-image-glow"></div>
-                </div>
-              </div>
-
+          <div className="call-now-premium-card reveal-scale">
+            <div className="cnc-icon-wrap">
+              <Phone size={40} className="cnc-icon" />
+            </div>
+            <div className="cnc-text">
+              <h2 className="cnc-title">Are you in a hurry?</h2>
+              <p className="cnc-desc">Give us a call and we will assign a dedicated manager to your mandate right away.</p>
+            </div>
+            <div className="cnc-action">
+              <a href="tel:+919876543210" className="btn-call-now">
+                <span className="bcn-text">Call Now</span>
+                <span className="bcn-number">+91 98765 43210</span>
+              </a>
             </div>
           </div>
         </div>

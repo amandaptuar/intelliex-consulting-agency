@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Target, ShieldCheck, Award } from 'lucide-react';
+import { Target, ShieldCheck, Award, Check } from 'lucide-react';
 import Marquee from '../components/Marquee';
 import './About.css';
 
@@ -18,9 +18,9 @@ export default function About() {
         <div className="about-hero-overlay"></div>
         <div className="container about-hero-content">
           <div className="ah-eyebrow reveal-blur delay-1">
-            <span className="ah-line"></span> Our Story
+            <span className="ah-line"></span> vision to become
           </div>
-          <h1 className="ah-title reveal-blur delay-2">From Vision to<br/>India's Most Trusted<br/>Talent Advisory</h1>
+          <h1 className="ah-title reveal-blur delay-2">Our Vision To Make India's Best<br/>Talent Advisory</h1>
           <p className="ah-desc reveal-blur delay-3">A journey built on trust, deep market expertise, and the unwavering belief that the right leadership transforms organisations.</p>
         </div>
       </section>
@@ -36,7 +36,7 @@ export default function About() {
                 Intelliworx Consulting was founded by a coalition of HR veterans who recognised a critical gap in India's recruitment landscape. Companies didn't just need resumes—they needed a strategic partner who truly understood their business operations, cultural nuances, and long-term objectives.
               </p>
               <p className="firm-p">
-                Armed with deep domain knowledge and a relentless focus on quality, we set out to build the country's most trusted talent advisory. Today, we operate across 50+ cities, serving over 200 corporate clients, from agile startups to Fortune 500 conglomerates.
+                Armed with deep domain knowledge and expertise and a relentless focus on quality, we set out to build one of the most trusted client advisory. Today, we operate across 50+ cities including tier 1 like Mumbai, Bangalore, Delhi NCR and tier 2 market, served over 200 client, from agile startup to multi national companies including 10+ year old client still with us.
               </p>
               <div className="firm-stats-inline">
                 <div className="f-stat reveal-scale delay-1">
@@ -57,6 +57,51 @@ export default function About() {
                 <span className="fvx-num">15+</span>
                 <span className="fvx-txt">Years of<br/>Excellence</span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════ OUR TEAM SECTION (Ultra Premium Dark) ══════ */}
+      <section className="section animated-team-bg-dark" style={{ padding: '100px 0' }}>
+        <div className="container">
+          <div className="team-glass-card">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center' }}>
+              
+              <div className="reveal-left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <span className="premium-eyebrow" style={{ color: '#c9a84c' }}>Behind The Scenes</span>
+                <h2 className="premium-title" style={{ marginBottom: '24px', color: '#fff' }}>Meet Our Team</h2>
+                <p className="premium-desc" style={{ marginBottom: '24px', lineHeight: '1.8', color: 'rgba(255,255,255,0.75)' }}>
+                  We are a group of dedicated professionals passionate about connecting the right talent with the right opportunities. With 15+ years of combined experience across various industries, our experts understand the nuances of every sector we serve.
+                </p>
+                
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px 0', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
+                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Industry Veterans:</strong> Led by former industry executives.</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
+                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Specialised Desks:</strong> Dedicated teams for diverse sectors.</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
+                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Agile Execution:</strong> 24-hour response and rapid deployment.</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="reveal-right delay-1" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="team-image-wrapper">
+                  <img 
+                    src="/image.png" 
+                    alt="Our Team" 
+                    className="team-image"
+                  />
+                  <div className="team-image-glow"></div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -83,7 +128,7 @@ export default function About() {
             <div className="val-card featured reveal delay-1">
               <div className="val-icon"><Target size={32}/></div>
               <h3 className="val-title">Uncompromising Excellence</h3>
-              <p className="val-desc">Quality over quantity is our mantra. Through rigorous evaluation, we shortlist only the top 3% of candidates for every mandate, ensuring flawless cultural alignment.</p>
+              <p className="val-desc">Quality over quantity is our mantra. Through rigorous evaluation, we shortlist only the top 5% of candidates for every mandate, ensuring flawless cultural alignment.</p>
               <div className="val-num">02</div>
             </div>
             
