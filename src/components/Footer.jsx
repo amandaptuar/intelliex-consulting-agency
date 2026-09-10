@@ -14,9 +14,10 @@ export default function Footer() {
           <div className="footer-brand">
             <Link to="/" style={{ display: 'inline-block', marginBottom: '16px' }}>
               <img 
-                src="/image copy.png" 
+                src="/Inelliworx-Logo.jpeg" 
                 alt="Intelliworx Consulting" 
-                style={{ height: '64px', width: 'auto', userSelect: 'none', WebkitUserDrag: 'none' }} 
+                className="footer-brand-logo"
+                style={{ height: '56px', width: 'auto', borderRadius: '6px', objectFit: 'contain', userSelect: 'none', WebkitUserDrag: 'none' }} 
                 draggable="false"
                 onContextMenu={(e) => e.preventDefault()}
               />
