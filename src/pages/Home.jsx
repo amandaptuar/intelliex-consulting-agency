@@ -22,40 +22,34 @@ import LogoMarquee from '../components/LogoMarquee';
 
 import './Home.css';
 
-/* ───── HERO SLIDES (Vibrant & Bright) ───── */
+/* ───── HERO SLIDES ───── */
 const slides = [
   {
     id: 1,
     image: hero1,
-    tag: 'EXECUTIVE SEARCH & LEADERSHIP PARTNER',
-    eyebrow: 'Pan-India Recruitment Excellence',
-    title: 'We Place Leaders\nWho Drive Unstoppable Growth',
-    sub: 'Connecting India’s fastest-growing enterprises and unicorns with elite C-Suite, Director, and Specialist talent across 50+ cities.',
-    badgeText: '15-Day Average Turnaround',
-    cta1: { label: 'Request Executive Proposal', to: '/proposal' },
-    cta2: { label: 'Explore Practice Areas', to: '/services' },
+    eyebrow: "Our Vision to Make India's Best Talent Partner",
+    title: 'We Place Leaders\nWho Drive Growth',
+    sub: "From entry-level talent to C-suite executives — Intelliworx connects India's finest talent with the country's most admired organisations. We work for startups to large enterprises.",
+    cta1: { label: 'Request Proposal', to: '/proposal' },
+    cta2: { label: 'Our Services', to: '/services' },
   },
   {
     id: 2,
     image: hero2,
-    tag: 'CONFIDENTIAL C-SUITE MANDATES',
-    eyebrow: 'Discreet · Rigorous · High Impact',
-    title: 'Strategic Leadership\nHiring For The Boardroom',
-    sub: 'Access India’s top 5% passive executive leadership pool with complete discretion, deep sector intelligence, and guaranteed retention.',
-    badgeText: '98.6% Candidate Retention',
-    cta1: { label: 'CXO Search Practice', to: '/services' },
-    cta2: { label: 'Our Story & Heritage', to: '/about' },
+    eyebrow: 'Executive Search & CXO Hiring',
+    title: 'Discreet. Precise.\nBoard-Level Search',
+    sub: 'We access passive C-suite talent pools unavailable on any job board, with full confidentiality and unmatched speed.',
+    cta1: { label: 'Explore Executive Search', to: '/services' },
+    cta2: { label: 'Our Story', to: '/about' },
   },
   {
     id: 3,
     image: hero3,
-    tag: 'PAN-INDIA TALENT ECOSYSTEM',
-    eyebrow: '50+ Cities · 200+ Corporate Clients',
-    title: 'Cross-Sector Precision\nFrom Tech To Manufacturing',
-    sub: 'Domain-specialized search practices delivering top-tier candidates across IT, BFSI, Healthcare, Retail, Manufacturing & FMCG.',
-    badgeText: '5,000+ Placements Delivered',
+    eyebrow: '50+ Cities · 200+ Clients · 5000+ Placements',
+    title: 'Pan-India Talent\nNetworks, Built for You',
+    sub: 'Deep domain expertise across IT, Manufacturing, Healthcare, Retail, BFSI, Logistics & Education.',
     cta1: { label: 'Industries We Serve', to: '/industries' },
-    cta2: { label: 'Speak To A Consultant', to: '/contact' },
+    cta2: { label: 'Contact Us', to: '/contact' },
   },
 ];
 
@@ -282,57 +276,27 @@ export default function Home() {
             
             <div className="container hero-content">
               <div className={`hero-text-block ${i === current ? 'animate' : ''}`}>
-                
-                {/* Live glowing badge */}
-                <div className="hero-badge-pill">
-                  <span className="hero-pulse-dot"></span>
-                  <span className="hero-badge-text">{slide.tag}</span>
-                  <span className="hero-badge-sep">/</span>
-                  <span className="hero-badge-highlight">{slide.badgeText}</span>
+                <div className="hero-eyebrow-wrap">
+                  <span className="hero-eyebrow-line"></span>
+                  <span className="hero-eyebrow">{slide.eyebrow}</span>
                 </div>
-
                 <h1 className="hero-title">
                   {slide.title.split('\n').map((line, idx) => (
                     <React.Fragment key={idx}>
-                      {idx === 1 ? <span className="hero-title-highlight">{line}</span> : line}
+                      {line}
                       <br/>
                     </React.Fragment>
                   ))}
                 </h1>
-
                 <p className="hero-sub">{slide.sub}</p>
-
                 <div className="hero-actions">
-                  <Link to={slide.cta1.to} className="btn btn-hero-primary">
-                    <span>{slide.cta1.label}</span>
-                    <ArrowRight size={18}/>
+                  <Link to={slide.cta1.to} className="btn btn-primary">
+                    {slide.cta1.label} <ArrowRight size={16}/>
                   </Link>
-                  <Link to={slide.cta2.to} className="btn btn-hero-outline">
+                  <Link to={slide.cta2.to} className="btn btn-outline">
                     {slide.cta2.label}
                   </Link>
-                  <a href="tel:+919876543210" className="hero-call-pill">
-                    <Phone size={16} className="hcp-icon" />
-                    <span className="hcp-label">Urgent Mandate?</span>
-                    <span className="hcp-num">+91 98765 43210</span>
-                  </a>
                 </div>
-
-                {/* Micro trust indicators */}
-                <div className="hero-trust-bar">
-                  <div className="htb-item">
-                    <CheckCircle2 size={16} color="#dfb755" />
-                    <span>50+ Indian Cities</span>
-                  </div>
-                  <div className="htb-item">
-                    <CheckCircle2 size={16} color="#dfb755" />
-                    <span>Top 5% Candidate Screen</span>
-                  </div>
-                  <div className="htb-item">
-                    <CheckCircle2 size={16} color="#dfb755" />
-                    <span>90-Day Placement Guarantee</span>
-                  </div>
-                </div>
-
               </div>
             </div>
           </div>
@@ -402,91 +366,78 @@ export default function Home() {
         <LogoMarquee imageArray={clientLogos} speed={36} direction="right" bgColor="#ffffff" />
       </div>
 
-      {/* ══════ MEET OUR TEAM (After Hero & Scrollers) ══════ */}
+      {/* ══════ MEET OUR TEAM (White Background & Appealing) ══════ */}
       <section className="section home-team-section">
         <div className="container">
           <div className="home-team-card reveal-expand">
-            <div className="team-split-grid">
+            <div className="team-compact-grid">
               
-              {/* Left text & credentials */}
-              <div className="team-left-content reveal-left">
+              {/* Left: Concise & Appealing Text */}
+              <div className="team-compact-content reveal-left">
                 <div className="team-eyebrow-pill">
-                  <span className="team-pill-dot"></span>
-                  <span className="team-pill-text">BEHIND OUR CONSULTING EXCELLENCE</span>
+                  <Users size={13} />
+                  <span>BEHIND OUR SEARCH PRACTICE</span>
                 </div>
-                <h2 className="team-main-title">Meet The Leadership & Search Partners</h2>
-                <p className="team-main-desc">
-                  We are a dedicated team of former corporate executives, senior HR leaders, and talent intelligence specialists. With over 15+ years of combined experience across India's premier industries, our practice heads understand the operational nuances, leadership EQ, and cultural alignment needed for long-term hiring success.
+                <h2 className="team-compact-title">Meet Our Leadership & Search Team</h2>
+                <div className="team-title-line"></div>
+                <p className="team-compact-p">
+                  We are a dedicated group of senior HR professionals and search specialists passionate about connecting exceptional talent with market-leading organisations. With 15+ years of combined experience, our vertical heads understand the leadership dynamics of every sector we serve.
                 </p>
 
-                <div className="team-key-pillars">
-                  <div className="tkp-item">
-                    <div className="tkp-check"><Check size={16} strokeWidth={3}/></div>
-                    <div>
-                      <h4 className="tkp-heading">Former Industry Practitioners</h4>
-                      <p className="tkp-sub">Search directors who have run enterprise business units, not just recruitment desks.</p>
-                    </div>
+                <div className="team-compact-bullets">
+                  <div className="tcb-item">
+                    <div className="tcb-check"><Check size={14} strokeWidth={3} /></div>
+                    <span><strong>Industry Veterans:</strong> Led by former corporate practitioners.</span>
                   </div>
-
-                  <div className="tkp-item">
-                    <div className="tkp-check"><Check size={16} strokeWidth={3}/></div>
-                    <div>
-                      <h4 className="tkp-heading">Dedicated Sector Practice Desks</h4>
-                      <p className="tkp-sub">Specialized vertical heads for IT & Tech, BFSI, Healthcare, Manufacturing, and Retail.</p>
-                    </div>
+                  <div className="tcb-item">
+                    <div className="tcb-check"><Check size={14} strokeWidth={3} /></div>
+                    <span><strong>Specialised Desks:</strong> Dedicated practice heads for each sector.</span>
                   </div>
-
-                  <div className="tkp-item">
-                    <div className="tkp-check"><Check size={16} strokeWidth={3}/></div>
-                    <div>
-                      <h4 className="tkp-heading">Agile & Confidential Execution</h4>
-                      <p className="tkp-sub">24-hour mandate activation and 15-day average turnaround with complete NDA protection.</p>
-                    </div>
+                  <div className="tcb-item">
+                    <div className="tcb-check"><Check size={14} strokeWidth={3} /></div>
+                    <span><strong>Agile Execution:</strong> 24-hour response and rapid shortlisting.</span>
                   </div>
                 </div>
 
-                <div className="team-stats-strip">
-                  <div className="tss-col">
-                    <span className="tss-num">45<small>+</small></span>
-                    <span className="tss-lbl">Search Consultants</span>
+                {/* Quick Trust Highlights */}
+                <div className="team-quick-metrics">
+                  <div className="tqm-chip">
+                    <span className="tqm-val">15+</span>
+                    <span className="tqm-label">Years Heritage</span>
                   </div>
-                  <div className="tss-col">
-                    <span className="tss-num">15<small>+</small></span>
-                    <span className="tss-lbl">Avg. Years Exp.</span>
+                  <div className="tqm-chip">
+                    <span className="tqm-val">5,000+</span>
+                    <span className="tqm-label">Placements</span>
                   </div>
-                  <div className="tss-col">
-                    <span className="tss-num">50<small>+</small></span>
-                    <span className="tss-lbl">Cities Network</span>
+                  <div className="tqm-chip">
+                    <span className="tqm-val">50+</span>
+                    <span className="tqm-label">Cities Covered</span>
                   </div>
                 </div>
 
-                <div className="team-action-buttons">
-                  <Link to="/about" className="btn btn-team-cta">
-                    <span>Our Story & Leadership</span>
-                    <ArrowRight size={16}/>
-                  </Link>
-                  <Link to="/contact" className="btn btn-team-secondary">
-                    Consult With A Partner
+                <div className="team-compact-cta">
+                  <Link to="/about" className="btn btn-navy" style={{ padding: '12px 28px', fontSize: '0.88rem' }}>
+                    Our Story & Leadership <ArrowRight size={15}/>
                   </Link>
                 </div>
               </div>
 
-              {/* Right Visual with Glow */}
-              <div className="team-right-visual reveal-right delay-1">
-                <div className="team-image-container">
-                  <div className="team-aura-glow"></div>
+              {/* Right: Appealing Framed Photo */}
+              <div className="team-compact-visual reveal-right delay-1">
+                <div className="team-compact-img-wrap">
+                  <div className="team-photo-badge">
+                    <Sparkles size={13} color="#c9a84c" />
+                    <span>Executive Search Team</span>
+                  </div>
                   <img 
                     src="/image.png" 
-                    alt="Intelliworx Executive Search Team" 
-                    className="team-composite-photo" 
+                    alt="Intelliworx Consulting Team" 
+                    className="team-compact-photo"
                     loading="lazy"
                   />
-                  <div className="team-floating-tag">
-                    <Crown size={22} color="#c9a84c" />
-                    <div>
-                      <strong className="tft-title">Senior Advisory Council</strong>
-                      <span className="tft-sub">C-Suite & Board Search Practice</span>
-                    </div>
+                  <div className="team-trust-floating-badge">
+                    <Award size={18} color="#c9a84c" />
+                    <span>15+ Years Search Heritage</span>
                   </div>
                 </div>
               </div>

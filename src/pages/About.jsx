@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Target, ShieldCheck, Award, Check } from 'lucide-react';
+import { Target, ShieldCheck, Award } from 'lucide-react';
 import Marquee from '../components/Marquee';
 import './About.css';
 
@@ -57,51 +57,6 @@ export default function About() {
                 <span className="fvx-num">15+</span>
                 <span className="fvx-txt">Years of<br/>Excellence</span>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════ OUR TEAM SECTION (Ultra Premium Dark) ══════ */}
-      <section className="section animated-team-bg-dark" style={{ padding: '100px 0' }}>
-        <div className="container">
-          <div className="team-glass-card">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center' }}>
-              
-              <div className="reveal-left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <span className="premium-eyebrow" style={{ color: '#c9a84c' }}>Behind The Scenes</span>
-                <h2 className="premium-title" style={{ marginBottom: '24px', color: '#fff' }}>Meet Our Team</h2>
-                <p className="premium-desc" style={{ marginBottom: '24px', lineHeight: '1.8', color: 'rgba(255,255,255,0.75)' }}>
-                  We are a group of dedicated professionals passionate about connecting the right talent with the right opportunities. With 15+ years of combined experience across various industries, our experts understand the nuances of every sector we serve.
-                </p>
-                
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px 0', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
-                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Industry Veterans:</strong> Led by former industry executives.</span>
-                  </li>
-                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
-                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Specialised Desks:</strong> Dedicated teams for diverse sectors.</span>
-                  </li>
-                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                    <div className="team-check-icon"><Check size={16} strokeWidth={3}/></div>
-                    <span style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.85)', lineHeight: '1.6' }}><strong style={{ color: '#fff' }}>Agile Execution:</strong> 24-hour response and rapid deployment.</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="reveal-right delay-1" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div className="team-image-wrapper">
-                  <img 
-                    src="/image.png" 
-                    alt="Our Team" 
-                    className="team-image"
-                  />
-                  <div className="team-image-glow"></div>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>

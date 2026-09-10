@@ -55,10 +55,10 @@ input, textarea, select { font-family: var(--font-sans); }
 
 /* ===== TYPOGRAPHY ===== */
 h1, h2, h3, h4 { color: var(--text-dark); line-height: 1.2; }
-h1 { font-family: var(--font-display); font-size: clamp(2.6rem, 5.5vw, 4.5rem); font-weight: 800; letter-spacing: -0.02em; }
-h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; letter-spacing: -0.01em; }
-h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
-h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; }
+h1 { font-family: var(--font-display); font-size: clamp(2rem, 3.8vw, 2.9rem); font-weight: 700; letter-spacing: -0.015em; }
+h2 { font-family: var(--font-display); font-size: clamp(1.75rem, 2.5vw, 2.25rem); font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; }
+h4 { font-family: var(--font-display); font-size: 0.98rem; font-weight: 600; }
 
 /* ===== SECTION TITLES ===== */
 .section-eyebrow {
@@ -66,26 +66,26 @@ h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; }
   font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 .section-heading {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 800;
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 18px;
-  line-height: 1.15;
+  margin-bottom: 16px;
+  line-height: 1.22;
   letter-spacing: -0.01em;
 }
 .section-heading.light { color: var(--white); }
 .section-desc {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-muted);
   max-width: 640px;
-  line-height: 1.75;
+  line-height: 1.7;
 }
 .section-desc.light { color: rgba(255,255,255,0.8); }
 
