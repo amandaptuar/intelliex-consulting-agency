@@ -11,12 +11,12 @@ import Proposal from './pages/Proposal';
 import Clients from './pages/Clients';
 import './pages/Pages.css';
 
-import './pages/Pages.css';
-
 const ScrollToTopAndAnimate = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -55,6 +55,7 @@ function App() {
             <Route path="/proposal"   element={<Proposal />} />
             <Route path="/contact"    element={<Contact />} />
             <Route path="/clients"    element={<Clients />} />
+            <Route path="*"           element={<Home />} />
           </Routes>
         </main>
         <Footer />
